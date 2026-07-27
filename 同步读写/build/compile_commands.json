@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/wdnmd/demo/cpp/网络编程/build",
+  "command": "/usr/bin/c++ -I/home/wdnmd/demo/cpp/网络编程/include -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles/client.dir/src/client.cc.o -c /home/wdnmd/demo/cpp/网络编程/src/client.cc",
+  "file": "/home/wdnmd/demo/cpp/网络编程/src/client.cc",
+  "output": "/home/wdnmd/demo/cpp/网络编程/build/CMakeFiles/client.dir/src/client.cc.o"
+},
+{
+  "directory": "/home/wdnmd/demo/cpp/网络编程/build",
+  "command": "/usr/bin/c++ -I/home/wdnmd/demo/cpp/网络编程/include -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles/server.dir/src/server.cc.o -c /home/wdnmd/demo/cpp/网络编程/src/server.cc",
+  "file": "/home/wdnmd/demo/cpp/网络编程/src/server.cc",
+  "output": "/home/wdnmd/demo/cpp/网络编程/build/CMakeFiles/server.dir/src/server.cc.o"
+},
+{
+  "directory": "/home/wdnmd/demo/cpp/网络编程/build",
+  "command": "/usr/bin/c++ -I/home/wdnmd/demo/cpp/网络编程/include -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles/server_sync.dir/src/server_sync.cc.o -c /home/wdnmd/demo/cpp/网络编程/src/server_sync.cc",
+  "file": "/home/wdnmd/demo/cpp/网络编程/src/server_sync.cc",
+  "output": "/home/wdnmd/demo/cpp/网络编程/build/CMakeFiles/server_sync.dir/src/server_sync.cc.o"
+},
+{
+  "directory": "/home/wdnmd/demo/cpp/网络编程/build",
+  "command": "/usr/bin/c++ -I/home/wdnmd/demo/cpp/网络编程/include -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -g -std=gnu++17 -o CMakeFiles/client_sync.dir/src/client_sync.cc.o -c /home/wdnmd/demo/cpp/网络编程/src/client_sync.cc",
+  "file": "/home/wdnmd/demo/cpp/网络编程/src/client_sync.cc",
+  "output": "/home/wdnmd/demo/cpp/网络编程/build/CMakeFiles/client_sync.dir/src/client_sync.cc.o"
+}
+]

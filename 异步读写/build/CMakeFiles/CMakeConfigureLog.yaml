@@ -1,0 +1,2776 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/uname"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/uname"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/uname"
+      - "/home/wdnmd/.npm-global/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt"
+    message: |
+      The system is: Linux - 7.0.0-27-generic - aarch64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/gmake"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/gmake"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/gmake"
+      - "/home/wdnmd/.npm-global/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/sbin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/share/cmake-4.2/Modules/"
+    found: "/usr/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/4.2.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar"
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-ar"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ar"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ar"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ar"
+      - "/home/wdnmd/.npm-global/bin/llvm-ar"
+      - "/usr/local/sbin/llvm-ar"
+      - "/usr/local/bin/llvm-ar"
+      - "/usr/sbin/llvm-ar"
+      - "/sbin/llvm-ar"
+      - "/bin/llvm-ar"
+      - "/usr/games/llvm-ar"
+      - "/usr/local/games/llvm-ar"
+      - "/snap/bin/llvm-ar"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-ranlib"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ranlib"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ranlib"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ranlib"
+      - "/home/wdnmd/.npm-global/bin/llvm-ranlib"
+      - "/usr/local/sbin/llvm-ranlib"
+      - "/usr/local/bin/llvm-ranlib"
+      - "/usr/sbin/llvm-ranlib"
+      - "/sbin/llvm-ranlib"
+      - "/bin/llvm-ranlib"
+      - "/usr/games/llvm-ranlib"
+      - "/usr/local/games/llvm-ranlib"
+      - "/snap/bin/llvm-ranlib"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-strip"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-strip"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-strip"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-strip"
+      - "/home/wdnmd/.npm-global/bin/llvm-strip"
+      - "/usr/local/sbin/llvm-strip"
+      - "/usr/local/bin/llvm-strip"
+      - "/usr/sbin/llvm-strip"
+      - "/sbin/llvm-strip"
+      - "/bin/llvm-strip"
+      - "/usr/games/llvm-strip"
+      - "/usr/local/games/llvm-strip"
+      - "/snap/bin/llvm-strip"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld.lld"
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/ld.lld"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/ld.lld"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/ld.lld"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/ld.lld"
+      - "/home/wdnmd/.npm-global/bin/ld.lld"
+      - "/usr/local/sbin/ld.lld"
+      - "/usr/local/bin/ld.lld"
+      - "/usr/sbin/ld.lld"
+      - "/sbin/ld.lld"
+      - "/bin/ld.lld"
+      - "/usr/games/ld.lld"
+      - "/usr/local/games/ld.lld"
+      - "/snap/bin/ld.lld"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-nm"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-nm"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-nm"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-nm"
+      - "/home/wdnmd/.npm-global/bin/llvm-nm"
+      - "/usr/local/sbin/llvm-nm"
+      - "/usr/local/bin/llvm-nm"
+      - "/usr/sbin/llvm-nm"
+      - "/sbin/llvm-nm"
+      - "/bin/llvm-nm"
+      - "/usr/games/llvm-nm"
+      - "/usr/local/games/llvm-nm"
+      - "/snap/bin/llvm-nm"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-objdump"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-objdump"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-objdump"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-objdump"
+      - "/home/wdnmd/.npm-global/bin/llvm-objdump"
+      - "/usr/local/sbin/llvm-objdump"
+      - "/usr/local/bin/llvm-objdump"
+      - "/usr/sbin/llvm-objdump"
+      - "/sbin/llvm-objdump"
+      - "/bin/llvm-objdump"
+      - "/usr/games/llvm-objdump"
+      - "/usr/local/games/llvm-objdump"
+      - "/snap/bin/llvm-objdump"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-objcopy"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-objcopy"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-objcopy"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-objcopy"
+      - "/home/wdnmd/.npm-global/bin/llvm-objcopy"
+      - "/usr/local/sbin/llvm-objcopy"
+      - "/usr/local/bin/llvm-objcopy"
+      - "/usr/sbin/llvm-objcopy"
+      - "/sbin/llvm-objcopy"
+      - "/bin/llvm-objcopy"
+      - "/usr/games/llvm-objcopy"
+      - "/usr/local/games/llvm-objcopy"
+      - "/snap/bin/llvm-objcopy"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-readelf"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-readelf"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-readelf"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-readelf"
+      - "/home/wdnmd/.npm-global/bin/llvm-readelf"
+      - "/usr/local/sbin/llvm-readelf"
+      - "/usr/local/bin/llvm-readelf"
+      - "/usr/sbin/llvm-readelf"
+      - "/sbin/llvm-readelf"
+      - "/bin/llvm-readelf"
+      - "/usr/games/llvm-readelf"
+      - "/usr/local/games/llvm-readelf"
+      - "/snap/bin/llvm-readelf"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-dlltool"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-dlltool"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-dlltool"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-dlltool"
+      - "/home/wdnmd/.npm-global/bin/llvm-dlltool"
+      - "/usr/local/sbin/llvm-dlltool"
+      - "/usr/local/bin/llvm-dlltool"
+      - "/usr/sbin/llvm-dlltool"
+      - "/sbin/llvm-dlltool"
+      - "/bin/llvm-dlltool"
+      - "/usr/games/llvm-dlltool"
+      - "/usr/local/games/llvm-dlltool"
+      - "/snap/bin/llvm-dlltool"
+      - "/usr/bin/dlltool"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/dlltool"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/dlltool"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/dlltool"
+      - "/home/wdnmd/.npm-global/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/games/dlltool"
+      - "/usr/local/games/dlltool"
+      - "/snap/bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/llvm-addr2line"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-addr2line"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-addr2line"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-addr2line"
+      - "/home/wdnmd/.npm-global/bin/llvm-addr2line"
+      - "/usr/local/sbin/llvm-addr2line"
+      - "/usr/local/bin/llvm-addr2line"
+      - "/usr/sbin/llvm-addr2line"
+      - "/sbin/llvm-addr2line"
+      - "/bin/llvm-addr2line"
+      - "/usr/games/llvm-addr2line"
+      - "/usr/local/games/llvm-addr2line"
+      - "/snap/bin/llvm-addr2line"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/tapi"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/tapi"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/tapi"
+      - "/home/wdnmd/.npm-global/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/games/tapi"
+      - "/usr/local/games/tapi"
+      - "/snap/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-21.1"
+      - "llvm-ar-21"
+      - "llvm-ar21"
+      - "llvm-ar"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ar-21.1"
+      - "/usr/bin/llvm-ar-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ar-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ar-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ar-21.1"
+      - "/home/wdnmd/.npm-global/bin/llvm-ar-21.1"
+      - "/usr/local/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/usr/sbin/llvm-ar-21.1"
+      - "/sbin/llvm-ar-21.1"
+      - "/bin/llvm-ar-21.1"
+      - "/usr/games/llvm-ar-21.1"
+      - "/usr/local/games/llvm-ar-21.1"
+      - "/snap/bin/llvm-ar-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ar-21"
+    found: "/usr/bin/llvm-ar-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-21.1"
+      - "llvm-ranlib-21"
+      - "llvm-ranlib21"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21.1"
+      - "/usr/bin/llvm-ranlib-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ranlib-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ranlib-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ranlib-21.1"
+      - "/home/wdnmd/.npm-global/bin/llvm-ranlib-21.1"
+      - "/usr/local/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/usr/sbin/llvm-ranlib-21.1"
+      - "/sbin/llvm-ranlib-21.1"
+      - "/bin/llvm-ranlib-21.1"
+      - "/usr/games/llvm-ranlib-21.1"
+      - "/usr/local/games/llvm-ranlib-21.1"
+      - "/snap/bin/llvm-ranlib-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21"
+    found: "/usr/bin/llvm-ranlib-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-21.1"
+      - "clang-scan-deps-21"
+      - "clang-scan-deps21"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21.1"
+      - "/usr/bin/clang-scan-deps-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/clang-scan-deps-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/clang-scan-deps-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/clang-scan-deps-21.1"
+      - "/home/wdnmd/.npm-global/bin/clang-scan-deps-21.1"
+      - "/usr/local/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/usr/sbin/clang-scan-deps-21.1"
+      - "/sbin/clang-scan-deps-21.1"
+      - "/bin/clang-scan-deps-21.1"
+      - "/usr/games/clang-scan-deps-21.1"
+      - "/usr/local/games/clang-scan-deps-21.1"
+      - "/snap/bin/clang-scan-deps-21.1"
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21"
+    found: "/usr/bin/clang-scan-deps-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/usr/share/cmake-4.2/Modules/"
+    found: "/usr/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-21.1"
+      - "llvm-ar-21"
+      - "llvm-ar21"
+      - "llvm-ar"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ar-21.1"
+      - "/usr/bin/llvm-ar-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ar-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ar-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ar-21.1"
+      - "/home/wdnmd/.npm-global/bin/llvm-ar-21.1"
+      - "/usr/local/sbin/llvm-ar-21.1"
+      - "/usr/local/bin/llvm-ar-21.1"
+      - "/usr/sbin/llvm-ar-21.1"
+      - "/sbin/llvm-ar-21.1"
+      - "/bin/llvm-ar-21.1"
+      - "/usr/games/llvm-ar-21.1"
+      - "/usr/local/games/llvm-ar-21.1"
+      - "/snap/bin/llvm-ar-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ar-21"
+    found: "/usr/bin/llvm-ar-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-21.1"
+      - "llvm-ranlib-21"
+      - "llvm-ranlib21"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21.1"
+      - "/usr/bin/llvm-ranlib-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/llvm-ranlib-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/llvm-ranlib-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/llvm-ranlib-21.1"
+      - "/home/wdnmd/.npm-global/bin/llvm-ranlib-21.1"
+      - "/usr/local/sbin/llvm-ranlib-21.1"
+      - "/usr/local/bin/llvm-ranlib-21.1"
+      - "/usr/sbin/llvm-ranlib-21.1"
+      - "/sbin/llvm-ranlib-21.1"
+      - "/bin/llvm-ranlib-21.1"
+      - "/usr/games/llvm-ranlib-21.1"
+      - "/usr/local/games/llvm-ranlib-21.1"
+      - "/snap/bin/llvm-ranlib-21.1"
+      - "/usr/lib/llvm-21/bin/llvm-ranlib-21"
+    found: "/usr/bin/llvm-ranlib-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-21.1"
+      - "clang-scan-deps-21"
+      - "clang-scan-deps21"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/usr/lib/llvm-21/bin/"
+      - "/usr/bin/"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/"
+      - "/home/wdnmd/.npm-global/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21.1"
+      - "/usr/bin/clang-scan-deps-21.1"
+      - "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/file/clang-scan-deps-21.1"
+      - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current/clang-scan-deps-21.1"
+      - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/clang-scan-deps-21.1"
+      - "/home/wdnmd/.npm-global/bin/clang-scan-deps-21.1"
+      - "/usr/local/sbin/clang-scan-deps-21.1"
+      - "/usr/local/bin/clang-scan-deps-21.1"
+      - "/usr/sbin/clang-scan-deps-21.1"
+      - "/sbin/clang-scan-deps-21.1"
+      - "/bin/clang-scan-deps-21.1"
+      - "/usr/games/clang-scan-deps-21.1"
+      - "/usr/local/games/clang-scan-deps-21.1"
+      - "/snap/bin/clang-scan-deps-21.1"
+      - "/usr/lib/llvm-21/bin/clang-scan-deps-21"
+    found: "/usr/bin/clang-scan-deps-21"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4"
+      binary: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-21"
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0e2b0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0e2b0.dir/build.make CMakeFiles/cmTC_0e2b0.dir/build
+        gmake[1]: Entering directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4'
+        Building C object CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: aarch64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-21/bin/clang" -cc1 -triple aarch64-unknown-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -enable-tlsdesc -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-abi aapcs -debugger-tuning=gdb -fdebug-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4 -v -fcoverage-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4 -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include -internal-externc-isystem /usr/include/aarch64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target aarch64-unknown-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-21/lib/clang/21/include
+         /usr/local/include
+         /usr/include/aarch64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking C executable cmTC_0e2b0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e2b0.dir/link.txt --verbose=1
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: aarch64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -EL -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /lib/ld-linux-aarch64.so.1 -o cmTC_0e2b0 /lib/aarch64-linux-gnu/Scrt1.o /lib/aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/lib/aarch64-linux-gnu -L/usr/lib/aarch64-linux-gnu -L/lib -L/usr/lib -v CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /lib/aarch64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.46
+        /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -o cmTC_0e2b0
+        gmake[1]: Leaving directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-21/lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include/aarch64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-21/lib/clang/21/include] ==> [/usr/lib/llvm-21/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/aarch64-linux-gnu] ==> [/usr/include/aarch64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-21/lib/clang/21/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0e2b0/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_0e2b0.dir/build.make CMakeFiles/cmTC_0e2b0.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4']
+        ignore line: [Building C object CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: aarch64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-21/bin/clang" -cc1 -triple aarch64-unknown-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -enable-tlsdesc -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-abi aapcs -debugger-tuning=gdb -fdebug-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4 -v -fcoverage-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-7cBsP4 -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include -internal-externc-isystem /usr/include/aarch64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target aarch64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-21/lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/aarch64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_0e2b0]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e2b0.dir/link.txt --verbose=1]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: aarch64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -EL -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /lib/ld-linux-aarch64.so.1 -o cmTC_0e2b0 /lib/aarch64-linux-gnu/Scrt1.o /lib/aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/lib/aarch64-linux-gnu -L/usr/lib/aarch64-linux-gnu -L/lib -L/usr/lib -v CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /lib/aarch64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_0e2b0] ==> ignore
+          arg [/lib/aarch64-linux-gnu/Scrt1.o] ==> obj [/lib/aarch64-linux-gnu/Scrt1.o]
+          arg [/lib/aarch64-linux-gnu/crti.o] ==> obj [/lib/aarch64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15]
+          arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+          arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_0e2b0.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o]
+          arg [/lib/aarch64-linux-gnu/crtn.o] ==> obj [/lib/aarch64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15] ==> [/usr/lib/gcc/aarch64-linux-gnu/15]
+        collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/aarch64-linux-gnu/Scrt1.o;/lib/aarch64-linux-gnu/crti.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o;/lib/aarch64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/15;/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.46
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms"
+      binary: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-21"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fbda5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fbda5.dir/build.make CMakeFiles/cmTC_fbda5.dir/build
+        gmake[1]: Entering directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms'
+        Building CXX object CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: aarch64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-21/bin/clang" -cc1 -triple aarch64-unknown-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -enable-tlsdesc -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-abi aapcs -debugger-tuning=gdb -fdebug-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms -v -fcoverage-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include -internal-externc-isystem /usr/include/aarch64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target aarch64-unknown-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15
+         /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15
+         /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward
+         /usr/lib/llvm-21/lib/clang/21/include
+         /usr/local/include
+         /usr/include/aarch64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_fbda5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbda5.dir/link.txt --verbose=1
+        Ubuntu clang version 21.1.8 (6ubuntu1)
+        Target: aarch64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-21/bin
+        Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" -EL -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /lib/ld-linux-aarch64.so.1 -o cmTC_fbda5 /lib/aarch64-linux-gnu/Scrt1.o /lib/aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/lib/aarch64-linux-gnu -L/usr/lib/aarch64-linux-gnu -L/lib -L/usr/lib -v CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /lib/aarch64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.46
+        /usr/bin/clang++  -v -Wl,-v CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fbda5
+        gmake[1]: Leaving directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15]
+          add: [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15]
+          add: [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward]
+          add: [/usr/lib/llvm-21/lib/clang/21/include]
+          add: [/usr/local/include]
+          add: [/usr/include/aarch64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15] ==> [/usr/include/aarch64-linux-gnu/c++/15]
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/llvm-21/lib/clang/21/include] ==> [/usr/lib/llvm-21/lib/clang/21/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/aarch64-linux-gnu] ==> [/usr/include/aarch64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/aarch64-linux-gnu/c++/15;/usr/include/c++/15/backward;/usr/lib/llvm-21/lib/clang/21/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fbda5/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_fbda5.dir/build.make CMakeFiles/cmTC_fbda5.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms']
+        ignore line: [Building CXX object CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: aarch64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-21/bin/clang" -cc1 -triple aarch64-unknown-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -enable-tlsdesc -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-abi aapcs -debugger-tuning=gdb -fdebug-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms -v -fcoverage-compilation-dir=/home/wdnmd/demo/cpp/网络编程/异步读写/build/CMakeFiles/CMakeScratch/TryCompile-8UgAms -resource-dir /usr/lib/llvm-21/lib/clang/21 -dependency-file CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-21/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include -internal-externc-isystem /usr/include/aarch64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -target-feature +outline-atomics -target-feature -fmv -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target aarch64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/aarch64-linux-gnu/c++/15]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/lib/llvm-21/lib/clang/21/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/aarch64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_fbda5]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbda5.dir/link.txt --verbose=1]
+        ignore line: [Ubuntu clang version 21.1.8 (6ubuntu1)]
+        ignore line: [Target: aarch64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-21/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/aarch64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" -EL -z relro --hash-style=gnu --build-id --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /lib/ld-linux-aarch64.so.1 -o cmTC_fbda5 /lib/aarch64-linux-gnu/Scrt1.o /lib/aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/lib/aarch64-linux-gnu -L/usr/lib/aarch64-linux-gnu -L/lib -L/usr/lib -v CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /lib/aarch64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_fbda5] ==> ignore
+          arg [/lib/aarch64-linux-gnu/Scrt1.o] ==> obj [/lib/aarch64-linux-gnu/Scrt1.o]
+          arg [/lib/aarch64-linux-gnu/crti.o] ==> obj [/lib/aarch64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15]
+          arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+          arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_fbda5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o]
+          arg [/lib/aarch64-linux-gnu/crtn.o] ==> obj [/lib/aarch64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15] ==> [/usr/lib/gcc/aarch64-linux-gnu/15]
+        collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/aarch64-linux-gnu/Scrt1.o;/lib/aarch64-linux-gnu/crti.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o;/lib/aarch64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/15;/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.46
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:141 (find_package)"
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:215 (boost_find_component)"
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:610 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "boost_headers"
+    configs:
+      -
+        filename: "boost_headersConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "boost_headers-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "1.90.0"
+      version_complete: "1.90.0"
+      exact: true
+    settings:
+      required: "required_explicit"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      hints:
+        - "/usr/local/lib/cmake"
+      names:
+        - "boost_headers"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_headersConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_headers-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_headersConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_headers-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_headers-1.90.0/boost_headersConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/local/lib/cmake/boost_headers-1.90.0/boost_headers-config.cmake"
+      mode: "config"
+      version: "1.90.0"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:610 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "Boost"
+    configs:
+      -
+        filename: "BoostConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "boost-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Boost"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_wserialization-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_wserialization-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_wave-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_wave-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_url-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_url-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_unit_test_framework-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_unit_test_framework-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_type_erasure-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_type_erasure-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_timer-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_timer-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_thread-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_thread-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_test_exec_monitor-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_test_exec_monitor-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_noop-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_noop-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_basic-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_basic-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_backtrace-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_backtrace-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_addr2line-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_stacktrace_addr2line-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_serialization-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_serialization-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_regex-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_regex-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_random-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_random-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_python-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_python-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_program_options-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_program_options-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_process-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_process-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_prg_exec_monitor-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_prg_exec_monitor-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_numpy-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_numpy-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_nowide-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_nowide-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_mpi_python-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_mpi_python-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_mpi-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_mpi-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1l-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1l-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1f-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1f-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_tr1-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99l-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99l-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99f-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99f-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math_c99-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_math-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_log_setup-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_log_setup-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_log-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_log-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_locale-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_locale-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_json-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_json-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_iostreams-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_iostreams-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_headers-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_headers-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_graph_parallel-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_graph_parallel-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_graph-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_graph-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_filesystem-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_filesystem-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_fiber-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_fiber-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_exception-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_exception-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_date_time-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_date_time-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_coroutine-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_coroutine-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_chrono-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_chrono-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_charconv-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_charconv-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_atomic-1.90.0/BoostConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_atomic-1.90.0/boost-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake"
+      mode: "config"
+      version: "1.90.0"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:538 (find_path)"
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:643 (_boost_set_legacy_variables_from_config)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "Boost_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "boost/version.hpp"
+      - "boost/config.hpp"
+    candidate_directories:
+      - "/usr/local/include/"
+    found: "/usr/local/include/"
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:141 (find_package)"
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:610 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "boost_CON"
+    configs:
+      -
+        filename: "boost_CONConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "boost_con-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "1.90.0"
+      version_complete: "1.90.0"
+      exact: true
+    settings:
+      required: "required_explicit"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      hints:
+        - "/usr/local/lib/cmake"
+      names:
+        - "boost_CON"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_contract-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_context-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_container-1.90.0/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/games/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/games/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/games/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/games/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/snap/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/snap/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/boost_CONConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/boost_con-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:141 (find_package)"
+      - "/usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/usr/share/cmake-4.2/Modules/FindBoost.cmake:610 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "boost_CONF"
+    configs:
+      -
+        filename: "boost_CONFConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "boost_conf-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "1.90.0"
+      version_complete: "1.90.0"
+      exact: true
+    settings:
+      required: "required_explicit"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      hints:
+        - "/usr/local/lib/cmake"
+      names:
+        - "boost_CONF"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/demo/cpp/\u7f51\u7edc\u7f16\u7a0b/\u5f02\u6b65\u8bfb\u5199/build/CMakeFiles/pkgRedirects/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cmake/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/wdnmd/.npm-global/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/games/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/games/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/games/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/games/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/snap/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/snap/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/boost_CONFConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/boost_conf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "file"
+        - "/home/wdnmd/.trae-cn-server/tools/trae-gopls/current"
+        - "/home/wdnmd/.trae-cn-server/bin/stable-ee4fa801b30e584259b8b9fb1bb82554382b5fc8-debian10/bin/remote-cli"
+        - "/home/wdnmd/.npm-global/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
