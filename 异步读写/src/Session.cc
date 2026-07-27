@@ -19,7 +19,7 @@ void Session::Connect(asio_endpoint& ep){
 //     }
 // }
 
-void Session::WriteCallBack(boost::system::error_code& ec,
+void Session::WriteCallBack(const boost::system::error_code& ec,
         std::size_t bytetransferred){
             if(ec.value() != 0){
                 std::cout<<"error,ec value is:"<<ec.value()<<"massage is:"<<ec.message()<<std::endl;
@@ -51,7 +51,7 @@ void Session::WriteCallBack(boost::system::error_code& ec,
             }
         }
 
-void Session::WriteALLCallBack(boost::system::error_code& ec,  //使用 asio::async_write() 只需回调一次
+void Session::WriteALLCallBack(const boost::system::error_code& ec,  //使用 asio::async_write() 只需回调一次
         std::size_t bytetransferred){
             if(ec.value()!=0){
                 std::cout<<"error,ec value is:"<<ec.value()<<"massage is:"<<ec.message();
@@ -108,7 +108,7 @@ void  Session::ReadFromSocket(){
         std::bind(&Session::ReadCallBack,this,std::placeholders::_1,std::placeholders::_2));
     _recv_pending=true;
 }
-void Session::ReadCallBack(boost::system::error_code& ec,size_t bytetransferred){
+void Session::ReadCallBack(const boost::system::error_code& ec,size_t bytetransferred){
     if(ec.value()!=0){
         std::cout<<"error!,ec value is:"<<ec.value()<<"ec massage is:"<<ec.message()<<std::endl;
         return;
@@ -133,7 +133,7 @@ void Session::ReadALlFromSocket(){
     std::bind(&Session::ReadAllCallBack,this,std::placeholders::_1,std::placeholders::_2));
     _recv_pending=true;
 }
-void Session::ReadAllCallBack(boost::system::error_code& ec,std::size_t bytetransferred){
+void Session::ReadAllCallBack(const boost::system::error_code& ec,std::size_t bytetransferred){
     if(ec.value()!=0){
         std::cout<<"error!,ec value is:"<<ec.value()<<"ec massage is:"<<ec.message()<<std::endl;
         return;
@@ -143,5 +143,5 @@ void Session::ReadAllCallBack(boost::system::error_code& ec,std::size_t bytetran
     _recv_pending=false;
     _recv_node=nullptr;
     
-    ReadAllCallBack;
+    // ReadAllCallBack;
 }

@@ -20,9 +20,9 @@ class Session{
     //写操作 error
     // void WriteCallBackErr(boost::system::error_code& ec,
     //     std::size_t bytetransferred,std::shared_ptr<MsgNode> msg_node);
-    void WriteCallBack(boost::system::error_code& ec,  //需要多次回调 使用 socket.write_some()
+    void WriteCallBack(const boost::system::error_code& ec,  //需要多次回调 使用 socket.write_some()
         std::size_t bytetransferred);
-    void WriteALLCallBack(boost::system::error_code& ec,  //使用 asio::write() 只需回调一次
+    void WriteALLCallBack(const boost::system::error_code& ec,  //使用 asio::write() 只需回调一次
         std::size_t bytetransferred);
     
     //写操作的回调函数 error
@@ -34,9 +34,9 @@ class Session{
     void ReadFromSocket();
     void ReadALlFromSocket();
 
-    void ReadCallBack(boost::system::error_code& ec,
+    void ReadCallBack(const boost::system::error_code& ec,
         std::size_t bytetransferred);
-    void ReadAllCallBack(boost::system::error_code& ec,
+    void ReadAllCallBack(const boost::system::error_code& ec,
         std::size_t bytetransferred);
     
     private:
