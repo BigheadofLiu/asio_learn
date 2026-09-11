@@ -9,13 +9,14 @@ int main(){
     {
         asio::io_context ioc;
         ip::tcp::socket sock(ioc);
-        ip::tcp::endpoint server_ep(ip::make_address("127.0.0.1"),8899);  
+        ip::tcp::endpoint server_ep(ip::make_address("127.0.0.1"),8899);
         
         boost::system::error_code ec=boost::asio::error::host_not_found;
         sock.connect(server_ep,ec);
         if (ec)
         {
-            std::cout<<"connect failed,code is:"<<ec.value()<<"error message is:"<<ec.message();
+            std::cout<<"connect failed,code is:"<<ec.value()<<" "<<"error message is:"<<ec.message();
+            return 0;
         }
         std::cout<<"enter message:";
         char request[MAX_LENGTH] {};

@@ -25,7 +25,7 @@ int create_tcp_socket()
     // }
 
     //boost新版本
-    asio::io_context ioc;
+    asio::io_context ioc;  //屏蔽底层细节
     asio::ip::tcp::socket sock(ioc,asio::ip::tcp::v4());
     return 0;
 }
@@ -112,6 +112,7 @@ int connect_to_end() {
     asio::ip::tcp::endpoint ep(asio::ip::make_address_v4("127.0.0.1"),8899);
     asio::ip::tcp::socket sock(ioc);
     sock.connect(ep);
+    return 0;
 }
 
 // 服务端接收新连接
@@ -188,7 +189,7 @@ void use_const_buffer(){
 }
 void use_buffer_str(){
     std::string msg="hello world";
-    auto out_put=asio::buffer(msg);
+    auto out_put=asio::buffer(msg,msg.length());
 
     asio::io_context ioc;
     asio::ip::tcp::socket sock(ioc);
@@ -315,6 +316,5 @@ int read_data_by_read_from_socket(){
 //read_some  socket.read_some()
 //receive socket.receive()
 //read  asio::read()
-
 
 

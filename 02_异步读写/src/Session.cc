@@ -65,7 +65,7 @@ void Session::WriteALLCallBack(const boost::system::error_code& ec,  //使用 as
                 auto& send_node=_send_queue.front();
                 boost::asio::async_write(*_socket,
                     boost::asio::buffer(send_node->_msg+send_node->_cur_length,send_node->_total_length-send_node->_cur_length),
-                      bind(&Session::WriteALLCallBack,this,std::placeholders::_1,std::placeholders::_2));
+                      std::bind(&Session::WriteALLCallBack,this,std::placeholders::_1,std::placeholders::_2));
            }
         }
 

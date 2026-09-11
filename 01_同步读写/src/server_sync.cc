@@ -1,6 +1,8 @@
 #include "server.hpp"
+#include <iostream>
 #include <set> //using set
 #include <memory> //using share_ptr
+#include <thread>
 namespace asio=boost::asio;
 namespace ip=boost::asio::ip;
 const int MAX_LENGTH=1024;
@@ -30,9 +32,11 @@ void session(socket_prt sp){
             asio::write(*sp,asio::buffer(data,length));  
         }
     }
-    catch(const std::exception& e)
+    catch(const boost::system::error_code ec)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << ec.what() << std::endl;
+        std::cerr << ec.value() << std::endl;
+        std::cerr << ec.message() << std::endl;
     }
 }
 void server(asio::io_context& ioc,unsigned short port){
