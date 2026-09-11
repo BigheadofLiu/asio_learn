@@ -25,6 +25,8 @@ set(ASIO_COMMON_LIBS
     Threads::Threads
 )
 
+# 01: 同步读写
+# ------------------------------------------------------------------------------
 add_library(sync_socket_api
     "01_同步读写/src/end_point.cc"
     "01_同步读写/src/socket_api.cc"
@@ -53,6 +55,8 @@ add_executable(sync_echo_client "01_同步读写/src/client_sync.cc")
 target_include_directories(sync_echo_client PRIVATE "01_同步读写/include")
 target_link_libraries(sync_echo_client PRIVATE ${ASIO_COMMON_LIBS})
 
+# 02: 异步读写基础组件
+# ------------------------------------------------------------------------------
 add_library(async_session
     "02_异步读写/src/MsgNode.cc"
     "02_异步读写/src/Session.cc"
@@ -63,5 +67,56 @@ target_include_directories(async_session
 )
 target_link_libraries(async_session
     PUBLIC
+        ${ASIO_COMMON_LIBS}
+)
+
+# 03: 完整异步读写 Demo
+# ------------------------------------------------------------------------------
+add_library(async_demo_session
+    "03_异步读写_demo/src/Session.cc"
+)
+target_include_directories(async_demo_session
+    PUBLIC
+        "03_异步读写_demo/include"
+)
+target_link_libraries(async_demo_session
+    PUBLIC
+        ${ASIO_COMMON_LIBS}
+)
+
+add_library(async_demo_server
+    "03_异步读写_demo/src/Server.cc"
+)
+target_include_directories(async_demo_server
+    PUBLIC
+        "03_异步读写_demo/include"
+)
+target_link_libraries(async_demo_server
+    PUBLIC
+        async_demo_session
+        ${ASIO_COMMON_LIBS}
+)
+
+add_executable(async_server
+    "03_异步读写_demo/src/async_server.cc"
+)
+target_include_directories(async_server
+    PRIVATE
+        "03_异步读写_demo/include"
+)
+target_link_libraries(async_server
+    PRIVATE
+        async_demo_server
+)
+
+add_executable(sync_client_1
+    "03_异步读写_demo/src/Client.cc"
+)
+target_include_directories(sync_client_1
+    PRIVATE
+        "03_异步读写_demo/include"
+)
+target_link_libraries(sync_client_1
+    PRIVATE
         ${ASIO_COMMON_LIBS}
 )

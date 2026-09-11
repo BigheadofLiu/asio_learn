@@ -17,7 +17,7 @@
 ```text
 .
 ├── CMakeLists.txt
-├── 同步读写/
+├── 01_同步读写/
 │   ├── include/
 │   │   ├── client.hpp
 │   │   ├── end_point.hpp
@@ -30,12 +30,22 @@
 │       ├── server.cc
 │       ├── server_sync.cc
 │       └── socket_api.cc
-└── 异步读写/
+├── 02_异步读写/
+│   ├── include/
+│   │   ├── MsgNode.hpp
+│   │   └── Session.hpp
+│   └── src/
+│       ├── MsgNode.cc
+│       └── Session.cc
+└── 03_异步读写_demo/
     ├── include/
-    │   ├── MsgNode.hpp
+    │   ├── Client.hpp
+    │   ├── Server.hpp
     │   └── Session.hpp
     └── src/
-        ├── MsgNode.cc
+        ├── async_server.cc
+        ├── Client.cc
+        ├── Server.cc
         └── Session.cc
 ```
 
@@ -79,6 +89,10 @@ cmake --build build
 | `sync_echo_client` | 可执行文件 | 与 `sync_echo_server` 配合使用的 Echo 客户端 |
 | `sync_socket_api` | 静态库 | 同步 socket、endpoint、buffer 和读写 API 示例 |
 | `async_session` | 静态库 | 异步 Session 和消息节点实现 |
+| `async_demo_session` | 静态库 | `03_异步读写_demo` 的异步 Session |
+| `async_demo_server` | 静态库 | `03_异步读写_demo` 的 Server |
+| `async_server` | 可执行文件 | `03_异步读写_demo` 的异步 Echo 服务端 |
+| `async_client` | 可执行文件 | 与 `async_server` 配合使用的同步客户端 |
 
 同步目录中有多个 `main` 函数，因此每个示例被配置成独立的可执行文件，不能把所有 `.cc` 文件直接编译到同一个 target 中。
 
@@ -107,8 +121,8 @@ cmake --build build
 
 相关代码：
 
-- 服务端入口：`同步读写/src/server.cc`
-- 客户端入口：`同步读写/src/client.cc`
+- 服务端入口：`01_同步读写/src/server.cc`
+- 客户端入口：`01_同步读写/src/client.cc`
 
 ### 多线程 Echo 服务
 
@@ -134,12 +148,12 @@ cmake --build build
 
 相关代码：
 
-- Echo 服务端：`同步读写/src/server_sync.cc`
-- Echo 客户端：`同步读写/src/client_sync.cc`
+- Echo 服务端：`01_同步读写/src/server_sync.cc`
+- Echo 客户端：`01_同步读写/src/client_sync.cc`
 
 ## 同步读写 API
 
-同步 API 示例位于 `同步读写/src/socket_api.cc`，主要包括：
+同步 API 示例位于 `01_同步读写/src/socket_api.cc`，主要包括：
 
 | API | 特点 |
 |---|---|
@@ -154,15 +168,77 @@ cmake --build build
 
 ## 异步读写
 
-异步部分目前由 `async_session` 静态库提供，核心类是 `Session`：
+项目中有两组异步代码：
 
-- `Session` 持有一个 TCP socket。
-- `WriteToSocket` 使用 `async_write_some`，需要在回调中继续处理剩余数据。
-- `WriteALlToSocket` 使用 `asio::async_write`，由 Asio 持续完成整个缓冲区的写入。
-- `_send_queue` 用于保证多个异步发送请求按顺序执行。
-- `ReadFromSocket` 使用 `async_read_some`。
-- `ReadALlFromSocket` 使用 `asio::async_read`，尝试读取指定长度的数据。
-- `MsgNode` 负责保存待发送或待接收的数据、总长度和当前处理位置。
+- `02_异步读写`：较早的 `MsgNode`、消息队列和 `Session` 学习代码，编译为 `async_session` 静态库。
+- `03_异步读写_demo`：完整的异步 Echo Server 示例，由 `Server`、`Session` 和程序入口组成。
+
+### 03 异步 Echo Server
+
+启动服务端：
+
+```bash
+./build/async_server
+```
+
+再打开另一个终端启动客户端：
+
+```bash
+./build/async_client
+```
+
+服务端监听 `127.0.0.1:8899`，客户端发送一条消息后，服务端异步读取并把原消息写回。
+
+相关代码：
+
+- 程序入口：`03_异步读写_demo/src/async_server.cc`
+- 连接管理：`03_异步读写_demo/src/Server.cc`
+- 单连接处理：`03_异步读写_demo/src/Session.cc`
+- 测试客户端：`03_异步读写_demo/src/Client.cc`
+
+服务端的调用链：
+
+```text
+async_server.cc
+    ↓
+Server::start_accept()
+    ↓
+acceptor.async_accept()
+    ↓
+Server::handle_accept()
+    ↓
+Session::start()
+    ↓
+async_read_some()
+    ↓
+Session::handle_read()
+    ↓
+async_write()
+    ↓
+Session::handle_write()
+    ↓
+再次 async_read_some()
+```
+
+`Server` 负责监听端口和接受连接，每个客户端连接对应一个独立的 `Session`。`Session` 保存客户端 socket、接收缓冲区和读写回调。
+
+### Session 生命周期
+
+`Session` 继承 `std::enable_shared_from_this<Session>`，并由 `std::make_shared<Session>` 创建。异步回调通过 `shared_from_this()` 获得并保存 `shared_ptr`，保证异步操作完成前对象不会被提前销毁。
+
+```cpp
+auto self = shared_from_this();
+
+_socket.async_read_some(
+    boost::asio::buffer(_data, max_length),
+    std::bind(
+        &Session::handle_read,
+        self,
+        std::placeholders::_1,
+        std::placeholders::_2));
+```
+
+异步操作不会自动创建线程。当前 Demo 由 `io_context.run()` 驱动回调，所有回调默认在调用 `run()` 的线程中执行。
 
 异步读写的基本调用关系如下：
 
@@ -185,13 +261,13 @@ io_context.run()
 处理剩余数据或继续下一条消息
 ```
 
-当前异步目录还没有独立的 `main` 函数，因此它被编译成库，暂时不能直接运行。要形成完整的异步客户端或服务端，还需要补充：
+异步程序的基本步骤是：
 
 1. 创建 `io_context`。
-2. 创建并连接 `Session`。
-3. 发起 `ReadFromSocket` 或 `WriteToSocket`。
-4. 调用 `io_context.run()` 驱动异步回调。
-5. 在实际协议中处理消息边界、连接关闭和错误状态。
+2. 创建 `Server` 或 `Session`。
+3. 注册异步读写操作。
+4. 调用 `io_context.run()` 驱动回调。
+5. 在回调中处理数据、错误和下一次异步操作。
 
 ## 同步与异步对比
 
@@ -232,10 +308,10 @@ Boost.Asio 的同步和异步 API 都可能返回 `boost::system::error_code`。
 
 ## 推荐学习顺序
 
-1. 阅读 `同步读写/src/server.cc` 和 `同步读写/src/client.cc`，理解最基本的连接、发送和接收流程。
-2. 阅读 `同步读写/src/socket_api.cc`，对比不同同步读写 API。
-3. 阅读 `同步读写/src/server_sync.cc`，理解线程和 socket 生命周期。
-4. 阅读 `异步读写/include/MsgNode.hpp` 和 `异步读写/src/MsgNode.cc`，理解消息内存管理。
-5. 阅读 `异步读写/include/Session.hpp` 和 `异步读写/src/Session.cc`，理解异步发送队列和回调。
-6. 为异步模块补充入口程序，再通过 `io_context.run()` 驱动完整通信。
-
+1. 阅读 `01_同步读写/src/server.cc` 和 `01_同步读写/src/client.cc`，理解最基本的连接、发送和接收流程。
+2. 阅读 `01_同步读写/src/socket_api.cc`，对比不同同步读写 API。
+3. 阅读 `01_同步读写/src/server_sync.cc`，理解线程和 socket 生命周期。
+4. 阅读 `02_异步读写/include/MsgNode.hpp` 和 `02_异步读写/src/MsgNode.cc`，理解消息内存管理。
+5. 阅读 `02_异步读写/include/Session.hpp` 和 `02_异步读写/src/Session.cc`，理解异步发送队列和回调。
+6. 阅读 `03_异步读写_demo/src/Server.cc` 和 `03_异步读写_demo/src/Session.cc`，理解异步 Echo Server。
+7. 通过 `03_异步读写_demo/src/async_server.cc` 学习 `io_context.run()` 如何驱动完整通信。
