@@ -5,7 +5,7 @@
 
 Server::Server(boost::asio::io_context& ioc,unsigned short port):_ioc(ioc),
 _acc(ioc,boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(),port)){
-    std::cout<<"===8899端口开始监听客户端==="<<"\n";
+    std::cout<<"8899端口开始监听客户端"<<"\n";
     start_accept();
 }
 void Server::start_accept(){
@@ -18,14 +18,14 @@ void Server::start_accept(){
 
 void Server::handle_accept(std::shared_ptr<Session> new_session/*Session* new_session*/,const boost::system::error_code& ec){
     if(!ec){
-        std::cout<<"==============================\n";
+        // std::cout<<"==============================\n";
         std::cout<<"new client connected"<<"\n";
         std::cout<<"客户端ip:"<<new_session->get_socket().remote_endpoint().address().to_string()<<" "<<
         "客户端 port："<<new_session->get_socket().remote_endpoint().port()<<"\n";
-        std::cout<<"==============================\n";
+        // std::cout<<"==============================\n";
         new_session->start();
     }else {
-        std::cout<<"accept error,error code is:"<<ec.value()<<"message is:"<<ec.message();
+        std::cout<<"accept error,error code is:"<<ec.value()<<"message is:"<<ec.message()<<"\n";
     }
     start_accept();
 }

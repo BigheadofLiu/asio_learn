@@ -2,6 +2,7 @@
 #include <cstring>
 #include <functional>
 #include <iostream>
+#include <sys/socket.h>
 
 void Session::start(){
     //开始异步读
@@ -25,10 +26,10 @@ void Session::handle_write(const boost::system::error_code& ec){
 
 void Session::handle_read(const boost::system::error_code& ec,size_t byte_transferred){
     if(ec== boost::asio::error::eof){
-        std::cout<<"==========================\n";
+        // std::cout<<"==========================\n";
         std::cout<<"ip:"<<this->_socket.remote_endpoint().address()<<" "<<"port："<<this->_socket.remote_endpoint().port()<<" ";
         std::cout<<"client close connect"<<"\n";
-        std::cout<<"==========================\n";
+        // std::cout<<"==========================\n";
         return;
     }
     if(!ec){
@@ -36,6 +37,11 @@ void Session::handle_read(const boost::system::error_code& ec,size_t byte_transf
         std::cout.write(_data, byte_transferred);
         std::cout << std::endl;
         auto self = shared_from_this();
+        
+        // memset(_data, 0, max_length);
+        // _socket.async_read_some(boost::asio::buffer(_data,max_length),
+        // bind(&Session::handle_read,self,std::placeholders::_1,std::placeholders::_2));
+
         //echo 写法 异步写回数据
         boost::asio::async_write(_socket,boost::asio::buffer(_data,byte_transferred),
         std::bind(&Session::handle_write,self,std::placeholders::_1));
