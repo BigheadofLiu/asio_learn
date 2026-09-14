@@ -25,7 +25,10 @@ void Session::handle_write(const boost::system::error_code& ec){
 
 void Session::handle_read(const boost::system::error_code& ec,size_t byte_transferred){
     if(ec== boost::asio::error::eof){
+        std::cout<<"==========================\n";
+        std::cout<<"ip:"<<this->_socket.remote_endpoint().address()<<" "<<"port："<<this->_socket.remote_endpoint().port()<<" ";
         std::cout<<"client close connect"<<"\n";
+        std::cout<<"==========================\n";
         return;
     }
     if(!ec){
