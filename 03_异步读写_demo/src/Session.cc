@@ -11,6 +11,11 @@ void Session::start(){
     _socket.async_read_some(boost::asio::buffer(_data,max_length),
     std::bind(&Session::handle_read,self,std::placeholders::_1,std::placeholders::_2));
 }
+
+Session::~Session(){
+    std::cout<<"session destroy:"<<this<<"\n";
+}
+
 void Session::handle_write(const boost::system::error_code& ec){
     if(!ec){
         memset(_data, 0, max_length);
@@ -19,7 +24,7 @@ void Session::handle_write(const boost::system::error_code& ec){
         _socket.async_read_some(boost::asio::buffer(_data,max_length),
     std::bind(&Session::handle_read,self,std::placeholders::_1,std::placeholders::_2));
     }else{
-        std::cout<<"write error,error code is:"<<ec.value()<<"message is:"<<ec.message();
+        std::cout<<"write error,error code is:"<<ec.value()<<"message is:"<<ec.message()<<"\n";
         // delete this;
     }
 }
@@ -45,6 +50,8 @@ void Session::handle_read(const boost::system::error_code& ec,size_t byte_transf
         //echo 写法 异步写回数据
         boost::asio::async_write(_socket,boost::asio::buffer(_data,byte_transferred),
         std::bind(&Session::handle_write,self,std::placeholders::_1));
+        // boost::asio::async_write(_socket,boost::asio::buffer("hello client"),
+        // std::bind(&Session::handle_write,self,std::placeholders::_1));
     }else{
         std::cout<<"read error,error code is:"<<ec.value()<<" "<<"message is:"<<ec.message()<<"\n";
         // delete this;

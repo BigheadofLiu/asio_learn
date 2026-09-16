@@ -1,5 +1,6 @@
 .vscode
 build/
+build-debug
 .cache
 *.txt
-!CMakeLists.txt
+CMakeLists.txt
