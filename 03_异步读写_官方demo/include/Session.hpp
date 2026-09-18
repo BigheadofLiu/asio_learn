@@ -1,3 +1,4 @@
+#pragma once
 #include <cstddef>
 #include <boost/asio.hpp>
 #include <iostream>
@@ -18,7 +19,5 @@ class Session : public std::enable_shared_from_this<Session> {  //继承enable_s
     enum{max_length=1024}; 
     char _data[max_length];  //接收数据
     void handle_write(const boost::system::error_code& ec/*,size_t bytetransferred*/); //不考虑粘包的情况 写回调
-    void handle_read(const boost::system::error_code& ec,size_t byte_transferred); //读回调
-
-    
+    void handle_read(const boost::system::error_code& ec,size_t byte_transferred); //读回调    
 };

@@ -58,12 +58,12 @@ target_link_libraries(sync_echo_client PRIVATE ${ASIO_COMMON_LIBS})
 # 02: 异步读写基础组件
 # ------------------------------------------------------------------------------
 add_library(async_session
-    "02_异步读写/src/MsgNode.cc"
-    "02_异步读写/src/Session.cc"
+    "02_异步读写_api/src/MsgNode.cc"
+    "02_异步读写_api/src/Session.cc"
 )
 target_include_directories(async_session
     PUBLIC
-        "02_异步读写/include"
+        "02_异步读写_api/include"
 )
 target_link_libraries(async_session
     PUBLIC
@@ -73,11 +73,11 @@ target_link_libraries(async_session
 # 03: 完整异步读写 Demo
 # ------------------------------------------------------------------------------
 add_library(async_demo_session
-    "03_异步读写_demo/src/Session.cc"
+    "03_异步读写_官方demo/src/Session.cc"
 )
 target_include_directories(async_demo_session
     PUBLIC
-        "03_异步读写_demo/include"
+        "03_异步读写_官方demo/include"
 )
 target_link_libraries(async_demo_session
     PUBLIC
@@ -85,11 +85,11 @@ target_link_libraries(async_demo_session
 )
 
 add_library(async_demo_server
-    "03_异步读写_demo/src/Server.cc"
+    "03_异步读写_官方demo/src/Server.cc"
 )
 target_include_directories(async_demo_server
     PUBLIC
-        "03_异步读写_demo/include"
+        "03_异步读写_官方demo/include"
 )
 target_link_libraries(async_demo_server
     PUBLIC
@@ -98,11 +98,11 @@ target_link_libraries(async_demo_server
 )
 
 add_executable(async_server
-    "03_异步读写_demo/src/async_server.cc"
+    "03_异步读写_官方demo/src/async_server.cc"
 )
 target_include_directories(async_server
     PRIVATE
-        "03_异步读写_demo/include"
+        "03_异步读写_官方demo/include"
 )
 target_link_libraries(async_server
     PRIVATE
@@ -110,13 +110,65 @@ target_link_libraries(async_server
 )
 
 add_executable(sync_client_1
-    "03_异步读写_demo/src/Client.cc"
+    "03_异步读写_官方demo/src/Client.cc"
 )
 target_include_directories(sync_client_1
     PRIVATE
-        "03_异步读写_demo/include"
+        "03_异步读写_官方demo/include"
 )
 target_link_libraries(sync_client_1
     PRIVATE
         ${ASIO_COMMON_LIBS}
+)
+
+# 04_异步读写_改进
+# ------------------------------------------------------------------------------
+add_library(async_csession
+    "04_异步读写_改进/src/csession.cc"
+)
+target_include_directories(async_csession
+PUBLIC
+    "04_异步读写_改进/include"
+)
+target_link_libraries(async_csession
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+)
+
+add_library(async_cserver
+    "04_异步读写_改进/src/cserver.cc"
+)
+target_include_directories(async_cserver
+    PUBLIC
+        "04_异步读写_改进/include"
+)
+target_link_libraries(async_cserver
+    PUBLIC
+        async_csession
+        ${ASIO_COMMON_LIBS}
+)
+
+add_executable(cserver_main
+    "04_异步读写_改进/src/async_cserver.cc"
+)
+target_include_directories(cserver_main
+    PRIVATE
+        "04_异步读写_改进/include"
+)
+target_link_libraries(cserver_main
+    PRIVATE
+        async_cserver
+)
+
+add_library(msgnode
+    "04_异步读写_改进/src/msgnode.cc"
+)
+target_include_directories(msgnode
+    PUBLIC
+    "04_异步读写_改进/include"
+)
+target_link_libraries(msgnode
+    PUBLIC
+    async_csession
+    ${ASIO_COMMON_LIBS}
 )
