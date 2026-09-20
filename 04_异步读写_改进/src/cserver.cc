@@ -7,6 +7,7 @@
 
 cserver::cserver(boost::asio::io_context& ioc,unsigned short port):_ioc(ioc),_port(port),
     _acc(ioc,boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(),_port)){
+        std::cout<<"8899端口开始监听\n";
         start_accept();
 }
 
@@ -21,6 +22,10 @@ void cserver::start_accept(){
 
 void cserver::handle_accept(std::shared_ptr<csession> new_session,const boost::system::error_code& ec){
     if(!ec){
+        std::cout<<"new client connected"<<"\n";
+        std::cout<<"客户端ip:"<<new_session->get_socket().remote_endpoint().address().to_string()<<" "<<
+        "客户端 port："<<new_session->get_socket().remote_endpoint().port()<<"\n";
+
         new_session->start();
         _map_csessions.insert(std::make_pair(new_session->get_uuid(),new_session ));
     }else { 

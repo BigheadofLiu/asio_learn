@@ -125,14 +125,15 @@ target_link_libraries(sync_client_1
 # ------------------------------------------------------------------------------
 add_library(async_csession
     "04_异步读写_改进/src/csession.cc"
+    "04_异步读写_改进/src/msgnode.cc"
 )
 target_include_directories(async_csession
 PUBLIC
     "04_异步读写_改进/include"
 )
 target_link_libraries(async_csession
-PUBLIC
-    ${ASIO_COMMON_LIBS}
+    PUBLIC
+        ${ASIO_COMMON_LIBS}
 )
 
 add_library(async_cserver
@@ -158,17 +159,4 @@ target_include_directories(cserver_main
 target_link_libraries(cserver_main
     PRIVATE
         async_cserver
-)
-
-add_library(msgnode
-    "04_异步读写_改进/src/msgnode.cc"
-)
-target_include_directories(msgnode
-    PUBLIC
-    "04_异步读写_改进/include"
-)
-target_link_libraries(msgnode
-    PUBLIC
-    async_csession
-    ${ASIO_COMMON_LIBS}
 )

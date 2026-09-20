@@ -1,7 +1,8 @@
 #pragma once
-#include "csession.hpp"
 #include <cstddef>
 #include <cstring>
+
+class csession;
 
 class msgnode{
     public:
