@@ -25,9 +25,8 @@ void cserver::handle_accept(std::shared_ptr<csession> new_session,const boost::s
         std::cout<<"new client connected"<<"\n";
         std::cout<<"客户端ip:"<<new_session->get_socket().remote_endpoint().address().to_string()<<" "<<
         "客户端 port："<<new_session->get_socket().remote_endpoint().port()<<"\n";
-
-        new_session->start();
         _map_csessions.insert(std::make_pair(new_session->get_uuid(),new_session ));
+        new_session->start();
     }else { 
         std::cout<<"accept error:"<<" "<<ec.value()<<" "<<ec.message();
     }

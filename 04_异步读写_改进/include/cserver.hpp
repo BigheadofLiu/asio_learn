@@ -13,7 +13,7 @@ class cserver{
     private:
     void start_accept();
     void handle_accept(std::shared_ptr<csession> new_session,const boost::system::error_code& ec);
-    unsigned short _port;
+    unsigned short _port; //好像port 有没有无所谓？
     boost::asio::io_context& _ioc;
     boost::asio::ip::tcp::acceptor _acc;
     std::map<std::string, std::shared_ptr<csession>> _map_csessions; //map 管理 session
