@@ -160,3 +160,14 @@ target_link_libraries(cserver_main
     PRIVATE
         async_cserver
 )
+
+add_executable(cclient
+    "04_异步读写_改进/src/cclient.cc"
+)
+target_include_directories(cclient
+    PRIVATE
+        "04_异步读写_改进/include"
+)
+target_link_libraries(cclient
+    ${ASIO_COMMON_LIBS}
+)
