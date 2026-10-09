@@ -13,7 +13,7 @@ void Session::start(){
 }
 
 Session::~Session(){
-    std::cout<<"session destroy:"<<this<<"\n";
+    // std::cout<<"session destroy:"<<this<<"\n";
 }
 
 void Session::handle_write(const boost::system::error_code& ec){

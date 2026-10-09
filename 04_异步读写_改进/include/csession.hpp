@@ -5,6 +5,7 @@
 #include <memory>
 #include <mutex>
 #include <queue>
+#include <vector>
 
 
 class cserver;
@@ -27,6 +28,7 @@ class csession:public std::enable_shared_from_this<csession>{
         _head_length=sizeof(size_t)
     };
     char _data[_max_length];  //改为 vector 会不会更好？
+    // std::vector<char> _data;
     void handle_read(const boost::system::error_code& ec,size_t buffertransfered);
     void handle_write( const boost::system::error_code& ec);
     std::queue<std::shared_ptr<msgnode>> _send_queue; //发送队列

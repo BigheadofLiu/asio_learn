@@ -87,7 +87,7 @@ void csession::handle_read(const boost::system::error_code& ec,size_t buffertran
          }else {
             std::cout<<"read error:"<<" "<<ec.value()<<" "<<ec.message()<<"\n";
          }
-         _cserver->clear_csession(_uuid);
+        _cserver->clear_csession(_uuid);
         return;
     }
     size_t copy_length = 0;
