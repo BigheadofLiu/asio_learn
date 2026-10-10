@@ -29,17 +29,17 @@ class csession:public std::enable_shared_from_this<csession>{
     };
     char _data[_max_length];  //改为 vector 会不会更好？
     // std::vector<char> _data;
-    void handle_read(const boost::system::error_code& ec,size_t buffertransfered);
+    void handle_read(const boost::system::error_code& ec,size_t byte_transfered);
     void handle_write( const boost::system::error_code& ec);
     std::queue<std::shared_ptr<msgnode>> _send_queue; //发送队列
     std::queue<std::shared_ptr<msgnode>> _recv_queue; //接受队列
-    bool _recv_padding;
-    bool _send_padding;
-    std::mutex _send_lock;
-    std::mutex _recv_lock;
+    bool _recv_padding;   //接收状态标志  true:正在接收
+    bool _send_padding;   //发送状态标志  false:未在发送
+    std::mutex _send_lock; //发送锁 
+    std::mutex _recv_lock; //接受锁
 
     //用于切包处理
-    std::shared_ptr<msgnode> _recv_msg_node;
-    std::shared_ptr<msgnode> _recv_head_node;
-    bool _head_status;
+    std::shared_ptr<msgnode> _recv_msg_node; //消息节点
+    std::shared_ptr<msgnode> _recv_head_node; //头节点（存储长度）
+    bool _head_status; //头节点状态 true:消息头已收完，正在收正文 false:消息头未收完
 };

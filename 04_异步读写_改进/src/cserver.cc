@@ -5,10 +5,11 @@
 #include <memory>
 #include <utility>
 
-cserver::cserver(boost::asio::io_context& ioc,unsigned short port):_ioc(ioc),_port(port),
+cserver::cserver(boost::asio::io_context& ioc,unsigned short port)
+    :_ioc(ioc),_port(port),
     _acc(ioc,boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(),_port)){
-        std::cout<<"8899端口开始监听\n";
-        start_accept();
+    std::cout<<"8899端口开始监听\n";
+    start_accept();
 }
 
 void cserver::clear_csession(const std::string uuid){
