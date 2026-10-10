@@ -5,6 +5,7 @@
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
+#include <cstdint>
 #include <cstring>
 #include <functional>
 #include <iostream>
@@ -28,13 +29,13 @@ void csession::start(){
     memset(_data,0,_max_length);
     // std::fill(_data, _data+_max_legth, 0);
     auto self=shared_from_this();
-    //读原始数据到临时数组 消息头+消息本身
+    //读原始数据到临时数组 消息头+消息本身通过拆包拼出
     _socket.async_read_some(boost::asio::buffer(_data,_max_length),
     std::bind(&csession::handle_read,self,std::placeholders::_1,std::placeholders::_2));
 }
 
 void csession::send(const char* msg,size_t total_length){
-    //从发送队列 取消息发送
+    //指定消息加入发送队列
     std::lock_guard<std::mutex> send_locker(_send_lock);
     _send_queue.push(std::make_shared<msgnode>(msg,total_length));
     if(_send_padding){
@@ -43,7 +44,7 @@ void csession::send(const char* msg,size_t total_length){
     _send_padding=true;
     auto& first_msgnode=_send_queue.front();
     auto self=shared_from_this();
-
+    //从发送队列 取出消息发送
     boost::asio::async_write(_socket,boost::asio::buffer(first_msgnode->_data,first_msgnode->_max_length),
     std::bind(&csession::handle_write,self,std::placeholders::_1));
  }
