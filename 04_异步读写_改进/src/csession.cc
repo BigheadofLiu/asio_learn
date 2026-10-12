@@ -12,7 +12,9 @@
 #include <memory>
 #include <mutex>
 #include <ostream>
+#include <sstream>
 #include <sys/socket.h>
+#include <iomanip>
 
 csession::csession(boost::asio::io_context& ioc,cserver* cserver)
     :_socket(ioc),
@@ -57,6 +59,19 @@ const std::string& csession::get_uuid() const{
     return _uuid;
 }
 
+void csession::print_recv_data(char* data,int length){
+    //写法完全看不懂
+    std::stringstream ss;
+    std::string result = "0x";
+    for (int i = 0; i < length; i++) {
+        std::string hexstr;
+        ss << std::hex << std::setw(2) << std::setfill('0') << int(data[i]) << std::endl;
+        ss >> hexstr;
+        result += hexstr;
+    }
+    std::cout << "receive raw data is : " << result << std::endl;
+}
+
 // void csession::handle_read(const boost::system::error_code& ec,size_t buffertransfered){
 //     if(ec== boost::asio::error::eof){
 //         // std::cout<<"ip:"<<_socket.remote_endpoint().address()<<" "<<"port："<<_socket.remote_endpoint().port()<<" ";
@@ -84,6 +99,7 @@ const std::string& csession::get_uuid() const{
 // }
 
 void csession::handle_read(const boost::system::error_code& ec,size_t byte_transfered){
+    //byte_transfered 由 asio 传入 代表本次async_read_some 读入的字节数
     if(ec){
         if(ec== boost::asio::error::eof){
         // std::cout<<"ip:"<<_socket.remote_endpoint().address()<<" "<<"port："<<_socket.remote_endpoint().port()<<" ";
@@ -94,13 +110,19 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
         _cserver->clear_csession(_uuid);
         return;
     }
+    //加入延迟操作 测试粘包
+    print_recv_data(_data, byte_transfered);
+    std::chrono::milliseconds dura(2000);
+    std::this_thread::sleep_for(dura);
+
     size_t copy_length = 0;  //已处理长度
     auto self=shared_from_this();
     while (byte_transfered > 0) {
+        //拼接 消息头+消息正文
         if(!_head_status){
             //消息头部处理
             if(byte_transfered+_recv_head_node->_cur_length<_head_length){
-                //消息头部不足
+                //消息头部长度不足
                 memcpy(_recv_head_node->_data.data()+_recv_head_node->_cur_length, _data + copy_length,byte_transfered);
                 _recv_head_node->_cur_length+=byte_transfered;
                 std::fill(_data,_data+_max_length,0);
@@ -114,7 +136,7 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
             size_t head_remain=_head_length-_recv_head_node->_cur_length;  //头部长度
             memcpy(_recv_head_node->_data.data()+_recv_head_node->_cur_length, _data+copy_length, head_remain);
             copy_length += head_remain;
-            byte_transfered -= head_remain;  //剩余未处理数据长度
+            byte_transfered -= head_remain;  //剩余未处理数据长度(消息正文)
 
             size_t data_length=0;   //解析消息长度
             memcpy(&data_length, _recv_head_node->_data.data(), _head_length);
@@ -126,21 +148,22 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
                 _cserver->clear_csession(_uuid);
                 return;
             }
-            
+            //开始处理消息正文
             _recv_msg_node=std::make_shared<msgnode>(data_length);  //用于接收消息正文
+            //除去消息头长度的 byte_transfered 就是消息正文长度
             if(byte_transfered<data_length){
-                //消息正文不足
+                //消息正文长度不足
                 memcpy(_recv_msg_node->_data.data()+_recv_msg_node->_cur_length,_data+copy_length,byte_transfered);
                 _recv_msg_node->_cur_length+=byte_transfered;
-
+                // copy_length += byte_transfered; 
+                //继续接收消息正文
+                _head_status=true;  //true 表示消息头接收完毕 正文未接收完毕
                 std::fill(_data,_data+_max_length,0);
                 _socket.async_read_some(boost::asio::buffer(_data,_max_length),std::bind(
                     &csession::handle_read,self,std::placeholders::_1,std::placeholders::_2));
-                //头部处理完成
-                _head_status=true;
                 return;
             }
-            //消息正文完整
+            //消息正文长度充足
             memcpy(_recv_msg_node->_data.data()+_recv_msg_node->_cur_length,_data+copy_length,data_length);
             _recv_msg_node->_cur_length+=data_length;
             copy_length+=data_length;
