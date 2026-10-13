@@ -15,6 +15,7 @@
 #include <sstream>
 #include <sys/socket.h>
 #include <iomanip>
+#include <boost/endian/conversion.hpp>
 
 csession::csession(boost::asio::io_context& ioc,cserver* cserver)
     :_socket(ioc),
@@ -39,6 +40,12 @@ void csession::start(){
 void csession::send(const char* msg,size_t total_length){
     //指定消息加入发送队列
     std::lock_guard<std::mutex> send_locker(_send_lock);
+    //限制队列大小
+    auto send_queue_size=_send_queue.size();
+    if(send_queue_size>_queue_max_size){
+        std::cout<<"session:"<<_uuid<<" "<<"send queue is fulled,"<<"size is:"<<send_queue_size<<std::endl;
+        return;
+    }
     _send_queue.push(std::make_shared<msgnode>(msg,total_length));
     if(_send_padding){
         return;
@@ -110,7 +117,7 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
         _cserver->clear_csession(_uuid);
         return;
     }
-    
+
     //加入延迟操作 测试粘包
     // print_recv_data(_data, byte_transfered);
     // std::chrono::milliseconds dura(2000);
@@ -139,8 +146,9 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
             copy_length += head_remain;
             byte_transfered -= head_remain;  //剩余未处理数据长度(消息正文)
 
-            size_t data_length=0;   //解析消息长度
-            memcpy(&data_length, _recv_head_node->_data.data(), _head_length);
+            uint32_t network_length=0;   //解析消息长度
+            memcpy(&network_length, _recv_head_node->_data.data(), _head_length);
+            auto data_length=boost::endian::big_to_native(network_length);
             std::cout<<"data_length is:"<<data_length<<"\n";
 
             if(data_length>_max_length){

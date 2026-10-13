@@ -1,17 +1,20 @@
 #include "cclient.hpp"
 #include <chrono>
 #include <cstddef>
+#include <cstdint>
 #include <cstring>
 #include <iostream>
 #include <iterator>
 #include <ostream>
 #include <thread>
+#include <boost/endian.hpp>
 //使用前面的 sync 客户端
-
 namespace asio=boost::asio;
 namespace ip=boost::asio::ip;
+
 #define MAX_LENGTH 1024*2
-#define HEAD_LENGTH sizeof(size_t)
+// #define HEAD_LENGTH sizeof(size_t)
+#define HEAD_LENGTH sizeof(uint32_t) 
 
 int main(){
     try
@@ -60,9 +63,10 @@ int main(){
                 std::cout<<"enter message:";
                 char request[MAX_LENGTH] {0};
                 std::cin.getline(request,MAX_LENGTH);
-                size_t request_length=strlen(request);
+                auto request_length=strlen(request); //本机长度
+                uint32_t network_length=boost::endian::native_to_big(static_cast<uint32_t>(strlen(request)));  //网络长度
                 char send_data[MAX_LENGTH+HEAD_LENGTH]{0};
-                memcpy(send_data, &request_length, HEAD_LENGTH);
+                memcpy(send_data, &network_length, HEAD_LENGTH);
                 memcpy(send_data + HEAD_LENGTH, request, request_length);
                 asio::write(sock, asio::buffer(send_data, request_length + HEAD_LENGTH));
             }
@@ -73,14 +77,17 @@ int main(){
                 // std::this_thread::sleep_for(std::chrono::milliseconds(2));
                 // std::cout<<"begin to receive..."<<std::endl;
                 char reply_head[HEAD_LENGTH]{0};
-                size_t reply_length=asio::read(sock,asio::buffer(reply_head,HEAD_LENGTH));
-                size_t msglen=0;
-                memcpy(&msglen, reply_head, HEAD_LENGTH);
+                //读消息头
+                asio::read(sock,asio::buffer(reply_head,HEAD_LENGTH));
+                uint32_t network_length=0;
+                memcpy(&network_length, reply_head, HEAD_LENGTH);
+                uint32_t reply_length=boost::endian::big_to_native(network_length);
+                //读消息正文
                 char msg[MAX_LENGTH] {0};
-                size_t msg_length=asio::read(sock,asio::buffer(msg,msglen));
+                size_t msg_length=asio::read(sock,asio::buffer(msg,reply_length));
                 std::cout<<"reply is:";
-                std::cout.write(msg,msglen)<<std::endl;
-                std::cout<<"reply length is:"<<msglen<<"\n";
+                std::cout.write(msg,reply_length)<<std::endl;
+                std::cout<<"reply length is:"<<reply_length<<std::endl;
             }
         });
         send_thread.join();

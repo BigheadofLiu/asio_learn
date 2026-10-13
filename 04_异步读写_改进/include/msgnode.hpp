@@ -1,5 +1,6 @@
 #pragma once
 #include <cstddef>
+#include <cstdint>
 #include <vector>
 #include <memory>
 
@@ -15,7 +16,8 @@ class msgnode{
     enum{
         _max_size=1024*2,
         // _head_length=2
-        _head_length=sizeof(std::size_t)
+        // _head_length=sizeof(std::size_t)
+        _head_length=sizeof(uint32_t)
     };
     size_t _cur_length;
     size_t _max_length;

@@ -2,6 +2,7 @@
 #include "msgnode.hpp"
 #include <boost/asio.hpp>
 #include <cstddef>
+#include <cstdint>
 #include <memory>
 #include <mutex>
 #include <queue>
@@ -25,7 +26,9 @@ class csession:public std::enable_shared_from_this<csession>{
     std::string _uuid;
     enum{
         _max_length=1024*2,
-        _head_length=sizeof(size_t)
+        // _head_length=sizeof(size_t)
+        _head_length=sizeof(uint32_t),
+        _queue_max_size=1000
     };
     char _data[_max_length];  //改为 vector 会不会更好？
     // std::vector<char> _data;
