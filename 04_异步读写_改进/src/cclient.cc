@@ -54,8 +54,12 @@ int main(){
         //修改客户端 测试粘包
         std::thread send_thread([&sock]{
             for(;;){
-                std::this_thread::sleep_for(std::chrono::milliseconds(2));
-                const char* request="hello world!";
+                // std::this_thread::sleep_for(std::chrono::milliseconds(2));
+                // const char* request="hello world!";
+
+                std::cout<<"enter message:";
+                char request[MAX_LENGTH] {0};
+                std::cin.getline(request,MAX_LENGTH);
                 size_t request_length=strlen(request);
                 char send_data[MAX_LENGTH+HEAD_LENGTH]{0};
                 memcpy(send_data, &request_length, HEAD_LENGTH);
@@ -66,8 +70,8 @@ int main(){
 
         std::thread recv_thread([&sock]{
             for(;;){
-                std::this_thread::sleep_for(std::chrono::milliseconds(2));
-                std::cout<<"begin to receive..."<<std::endl;
+                // std::this_thread::sleep_for(std::chrono::milliseconds(2));
+                // std::cout<<"begin to receive..."<<std::endl;
                 char reply_head[HEAD_LENGTH]{0};
                 size_t reply_length=asio::read(sock,asio::buffer(reply_head,HEAD_LENGTH));
                 size_t msglen=0;

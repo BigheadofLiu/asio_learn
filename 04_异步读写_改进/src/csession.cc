@@ -110,10 +110,11 @@ void csession::handle_read(const boost::system::error_code& ec,size_t byte_trans
         _cserver->clear_csession(_uuid);
         return;
     }
+    
     //加入延迟操作 测试粘包
-    print_recv_data(_data, byte_transfered);
-    std::chrono::milliseconds dura(2000);
-    std::this_thread::sleep_for(dura);
+    // print_recv_data(_data, byte_transfered);
+    // std::chrono::milliseconds dura(2000);
+    // std::this_thread::sleep_for(dura);
 
     size_t copy_length = 0;  //已处理长度
     auto self=shared_from_this();
