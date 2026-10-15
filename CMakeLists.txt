@@ -13,6 +13,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(Boost REQUIRED COMPONENTS system)  #use boost
 find_package(Threads REQUIRED) #use thread
 find_package(Protobuf CONFIG REQUIRED) #use protocol
+find_package(jsoncpp CONFIG REQUIRED) #use jsoncpp
 
 if(TARGET Boost::headers)
     set(ASIO_BOOST_TARGET Boost::headers)
@@ -197,3 +198,13 @@ set(ASIO_COMMON_LIBS
 # target_link_libraries(protoc_test
 #     protobuf_protocol
 # )
+
+# 06_jsoncpp
+# ------------------------------------------------------------------------------
+add_executable(jsoncpp_test
+    "06_jsoncpp/jsoncpp_test.cc"
+)
+target_link_libraries(jsoncpp_test
+    PRIVATE
+        JsonCpp::JsonCpp
+)
