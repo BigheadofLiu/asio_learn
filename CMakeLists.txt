@@ -174,37 +174,37 @@ set(ASIO_COMMON_LIBS
 #     ${ASIO_COMMON_LIBS}
 # )
 
-# # 05_protocol
-# # ------------------------------------------------------------------------------
-# add_library(protobuf_protocol
-#     "05_protocol/student.pb.cc"
-# )
-# target_include_directories(protobuf_protocol
-#     PUBLIC
-#         "05_protocol"
-# )
-# target_link_libraries(protobuf_protocol
-#     PUBLIC
-#         protobuf::libprotobuf
-# )
+# 05_protocol
+# ------------------------------------------------------------------------------
+add_library(protobuf_protocol
+    "05_protocol/student.pb.cc"
+)
+target_include_directories(protobuf_protocol
+    PUBLIC
+        "05_protocol"
+)
+target_link_libraries(protobuf_protocol
+    PUBLIC
+        protobuf::libprotobuf
+)
 
-# add_executable(protoc_test
-#     "05_protocol/test.cc"
-# )
-# target_include_directories(protoc_test
-#     PUBLIC
-#     "05_protocol"
-# )
-# target_link_libraries(protoc_test
-#     protobuf_protocol
-# )
+add_executable(protoc_test
+    "05_protocol/test.cc"
+)
+target_include_directories(protoc_test
+    PUBLIC
+    "05_protocol"
+)
+target_link_libraries(protoc_test
+    protobuf_protocol
+)
 
 # 06_jsoncpp
 # ------------------------------------------------------------------------------
-add_executable(jsoncpp_test
-    "06_jsoncpp/jsoncpp_test.cc"
-)
-target_link_libraries(jsoncpp_test
-    PRIVATE
-        JsonCpp::JsonCpp
-)
+# add_executable(jsoncpp_test
+#     "06_jsoncpp/jsoncpp_test.cc"
+# )
+# target_link_libraries(jsoncpp_test
+#     PRIVATE
+#         JsonCpp::JsonCpp
+# )
