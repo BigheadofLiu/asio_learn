@@ -9,7 +9,7 @@ int main(){
 
     std::string data;
     stu1.SerializeToString(&data); //序列化
-    std::cout<<"serialize str is:"<<data<<std::endl;  //打印序列化后的字符
+    std::cout<<"序列化后:"<<"{"<<data<<"}"<<std::endl;  //打印序列化后的字符
 
     student stu2;
     stu2.ParseFromString(data);  //反序列化

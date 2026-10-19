@@ -174,33 +174,93 @@ set(ASIO_COMMON_LIBS
 #     ${ASIO_COMMON_LIBS}
 # )
 
-# 05_protocol
-# ------------------------------------------------------------------------------
-add_library(protobuf_protocol
-    "05_protocol/student.pb.cc"
+# # 05_protocol
+# # ------------------------------------------------------------------------------
+# # test
+# add_library(protobuf_protocol
+#     "05_protocol/test/student.pb.cc"
+# )
+# target_include_directories(protobuf_protocol
+#     PUBLIC
+#         "05_protocol/test/"
+# )
+# target_link_libraries(protobuf_protocol
+#     PUBLIC
+#         protobuf::libprotobuf
+# )
+# add_executable(protoc_test
+#     "05_protocol/test/test.cc"
+# )
+# target_include_directories(protoc_test
+#     PUBLIC
+#     "05_protocol/test/"
+# )
+# target_link_libraries(protoc_test
+#     protobuf_protocol
+# )
+# use protocbuf
+add_library(protocbuf_msgnode
+    "05_protocol/src/msgdata.pb.cc"
 )
-target_include_directories(protobuf_protocol
-    PUBLIC
-        "05_protocol"
+target_include_directories(protocbuf_msgnode
+PUBLIC
+    "05_protocol/include/"
 )
-target_link_libraries(protobuf_protocol
+target_link_libraries(protocbuf_msgnode
+PUBLIC
+    protobuf::libprotobuf
+)
+add_library(protocbuf_async_csession
+    "05_protocol/src/csession.cc"
+    "05_protocol/src/msgnode.cc"
+)
+target_include_directories(protocbuf_async_csession
+PUBLIC
+    "05_protocol/include"
+)
+target_link_libraries(protocbuf_async_csession
     PUBLIC
-        protobuf::libprotobuf
+        ${ASIO_COMMON_LIBS}
+        protocbuf_msgnode
+)
+add_library(protocbuf_async_cserver
+    "05_protocol/src/cserver.cc"
+)
+target_include_directories(protocbuf_async_cserver
+    PUBLIC
+        "05_protocol/include"
+)
+target_link_libraries(protocbuf_async_cserver
+    PUBLIC
+        protocbuf_async_csession
+        ${ASIO_COMMON_LIBS}
+)
+add_executable(protocbuf_cserver_main
+    "05_protocol/src/async_cserver.cc"
+)
+target_include_directories(protocbuf_cserver_main
+    PRIVATE
+        "05_protocol/include"
+)
+target_link_libraries(protocbuf_cserver_main
+    PRIVATE
+        protocbuf_async_cserver
 )
 
-add_executable(protoc_test
-    "05_protocol/test.cc"
+add_executable(protocbuf_cclient
+    "05_protocol/src/cclient.cc"
 )
-target_include_directories(protoc_test
-    PUBLIC
-    "05_protocol"
+target_include_directories(protocbuf_cclient
+    PRIVATE
+        "05_protocol/include"
 )
-target_link_libraries(protoc_test
-    protobuf_protocol
+target_link_libraries(protocbuf_cclient
+    ${ASIO_COMMON_LIBS}
+    protocbuf_msgnode
 )
 
-# 06_jsoncpp
-# ------------------------------------------------------------------------------
+# # 06_jsoncpp
+# # ------------------------------------------------------------------------------
 # add_executable(jsoncpp_test
 #     "06_jsoncpp/jsoncpp_test.cc"
 # )

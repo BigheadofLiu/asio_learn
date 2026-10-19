@@ -1,0 +1,5 @@
+syntax="proto3";
+message msgdata{
+    int32 id=1;
+    string data=2;
+}
