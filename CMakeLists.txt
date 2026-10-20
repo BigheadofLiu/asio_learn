@@ -198,69 +198,70 @@ set(ASIO_COMMON_LIBS
 # target_link_libraries(protoc_test
 #     protobuf_protocol
 # )
-# use protocbuf
-add_library(protocbuf_msgnode
-    "05_protocol/src/msgdata.pb.cc"
-)
-target_include_directories(protocbuf_msgnode
-PUBLIC
-    "05_protocol/include/"
-)
-target_link_libraries(protocbuf_msgnode
-PUBLIC
-    protobuf::libprotobuf
-)
-add_library(protocbuf_async_csession
-    "05_protocol/src/csession.cc"
-    "05_protocol/src/msgnode.cc"
-)
-target_include_directories(protocbuf_async_csession
-PUBLIC
-    "05_protocol/include"
-)
-target_link_libraries(protocbuf_async_csession
-    PUBLIC
-        ${ASIO_COMMON_LIBS}
-        protocbuf_msgnode
-)
-add_library(protocbuf_async_cserver
-    "05_protocol/src/cserver.cc"
-)
-target_include_directories(protocbuf_async_cserver
-    PUBLIC
-        "05_protocol/include"
-)
-target_link_libraries(protocbuf_async_cserver
-    PUBLIC
-        protocbuf_async_csession
-        ${ASIO_COMMON_LIBS}
-)
-add_executable(protocbuf_cserver_main
-    "05_protocol/src/async_cserver.cc"
-)
-target_include_directories(protocbuf_cserver_main
-    PRIVATE
-        "05_protocol/include"
-)
-target_link_libraries(protocbuf_cserver_main
-    PRIVATE
-        protocbuf_async_cserver
-)
+# # use protocbuf
+# add_library(protocbuf_msgnode
+#     "05_protocol/src/msgdata.pb.cc"
+# )
+# target_include_directories(protocbuf_msgnode
+# PUBLIC
+#     "05_protocol/include/"
+# )
+# target_link_libraries(protocbuf_msgnode
+# PUBLIC
+#     protobuf::libprotobuf
+# )
+# add_library(protocbuf_async_csession
+#     "05_protocol/src/csession.cc"
+#     "05_protocol/src/msgnode.cc"
+# )
+# target_include_directories(protocbuf_async_csession
+# PUBLIC
+#     "05_protocol/include"
+# )
+# target_link_libraries(protocbuf_async_csession
+#     PUBLIC
+#         ${ASIO_COMMON_LIBS}
+#         protocbuf_msgnode
+# )
+# add_library(protocbuf_async_cserver
+#     "05_protocol/src/cserver.cc"
+# )
+# target_include_directories(protocbuf_async_cserver
+#     PUBLIC
+#         "05_protocol/include"
+# )
+# target_link_libraries(protocbuf_async_cserver
+#     PUBLIC
+#         protocbuf_async_csession
+#         ${ASIO_COMMON_LIBS}
+# )
+# add_executable(protocbuf_cserver_main
+#     "05_protocol/src/async_cserver.cc"
+# )
+# target_include_directories(protocbuf_cserver_main
+#     PRIVATE
+#         "05_protocol/include"
+# )
+# target_link_libraries(protocbuf_cserver_main
+#     PRIVATE
+#         protocbuf_async_cserver
+# )
 
-add_executable(protocbuf_cclient
-    "05_protocol/src/cclient.cc"
-)
-target_include_directories(protocbuf_cclient
-    PRIVATE
-        "05_protocol/include"
-)
-target_link_libraries(protocbuf_cclient
-    ${ASIO_COMMON_LIBS}
-    protocbuf_msgnode
-)
+# add_executable(protocbuf_cclient
+#     "05_protocol/src/cclient.cc"
+# )
+# target_include_directories(protocbuf_cclient
+#     PRIVATE
+#         "05_protocol/include"
+# )
+# target_link_libraries(protocbuf_cclient
+#     ${ASIO_COMMON_LIBS}
+#     protocbuf_msgnode
+# )
 
 # # 06_jsoncpp
 # # ------------------------------------------------------------------------------
+# # test
 # add_executable(jsoncpp_test
 #     "06_jsoncpp/jsoncpp_test.cc"
 # )
@@ -268,3 +269,57 @@ target_link_libraries(protocbuf_cclient
 #     PRIVATE
 #         JsonCpp::JsonCpp
 # )
+# # use jsoncpp
+add_library(jsoncpp_csession
+    "06_jsoncpp/src/csession.cc"
+)
+target_include_directories(jsoncpp_csession
+PUBLIC
+    "06_jsoncpp/include/"
+)
+target_link_libraries(jsoncpp_csession
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
+    jsoncpp_msgnode
+)
+add_library(jsoncpp_msgnode
+    "06_jsoncpp/src/msgnode.cc"
+)
+target_include_directories(jsoncpp_msgnode
+PUBLIC
+    "06_jsoncpp/include/"
+)
+target_link_libraries(jsoncpp_msgnode
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+)
+add_library(jsoncpp_cserver
+    "06_jsoncpp/src/cserver.cc"
+)
+# target_include_directories(jsoncpp_cserver
+# )
+target_link_libraries(jsoncpp_cserver
+PUBLIC
+    jsoncpp_msgnode
+    jsoncpp_csession
+)
+add_executable(jsoncpp_async_cserver
+    "06_jsoncpp/src/async_cserver.cc"
+)
+target_link_libraries(jsoncpp_async_cserver
+    jsoncpp_cserver
+)
+add_executable(jsoncpp_cclient
+    "06_jsoncpp/src/cclient.cc"
+)
+target_include_directories(jsoncpp_cclient
+PUBLIC
+    "06_jsoncpp/include/"
+)
+target_link_libraries(jsoncpp_cclient
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
+)
+
