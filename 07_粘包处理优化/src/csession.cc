@@ -118,7 +118,6 @@ void csession::handle_read_head(const boost::system::error_code& ec,size_t byte_
         _cserver->clear_csession(_uuid);
         return;
     }
- 
 }
 void csession::handle_read_msg(const boost::system::error_code& ec,size_t byte_transfered){
     if(ec){
@@ -145,6 +144,7 @@ void csession::handle_read_msg(const boost::system::error_code& ec,size_t byte_t
     csession::send(_recv_msg_node->_data.data(),byte_transfered);
     //处理下一个头文件
     auto self=shared_from_this();
+    _recv_head_node->clear();
     boost::asio::async_read(
         _socket,
         boost::asio::buffer(_recv_head_node->_data,_head_length),

@@ -9,6 +9,8 @@
 #include <stdexcept>
 #include <thread>
 #include <boost/endian.hpp>
+#include <condition_variable>
+#include <mutex>
 
 #define MAX_LENGTH 1024*2
 #define HEAD_LENGTH sizeof(uint32_t) 
@@ -30,9 +32,19 @@ int main(){
             std::cout<<"connect failed,code is:"<<ec.value()<<" "<<"error message is:"<<ec.message();
             return 0;
         }
-        std::thread send_thread([&sock]{
+        std::mutex mutex;
+        std::condition_variable cv;
+        bool can_send=true;
+
+        std::thread send_thread([&sock,&mutex,&cv,&can_send]{
             for(;;){
-                std::cout<<"enter message:"<<std::endl;
+                {
+                    std::unique_lock<std::mutex> lock(mutex);
+                    cv.wait(lock,[&]{
+                        return can_send;
+                    });
+                }
+                std::cout<<"enter message:";
                 char request[MAX_LENGTH] {0};
                 std::cin.getline(request,MAX_LENGTH);
                 auto request_length=strlen(request); //本机长度
@@ -41,11 +53,23 @@ int main(){
                 memcpy(send_data, &network_length, HEAD_LENGTH);
                 memcpy(send_data + HEAD_LENGTH, request, request_length);
                 asio::write(sock, asio::buffer(send_data, request_length + HEAD_LENGTH));
+                
+                {
+                    std::lock_guard<std::mutex> lock(mutex);
+                    can_send=false;
+                }
+                cv.notify_one();
             }
         });
 
-        std::thread recv_thread([&sock]{
+        std::thread recv_thread([&]{
             for(;;){
+                {
+                    std::unique_lock<std::mutex> lock(mutex);
+                    cv.wait(lock, [&] {
+                    return !can_send;
+                    });
+                }
                 char reply_head[HEAD_LENGTH]{0};
                 //读消息头
                 asio::read(sock,asio::buffer(reply_head,HEAD_LENGTH));
@@ -61,6 +85,12 @@ int main(){
                 std::cout<<"reply is:";
                 std::cout.write(msg,reply_length)<<std::endl;
                 std::cout<<"reply length is:"<<reply_length<<std::endl;
+
+                {
+                    std::lock_guard<std::mutex> lock(mutex);
+                    can_send = true; // 轮到发送线程
+                }
+                cv.notify_one();
             }
         });
         send_thread.join();
