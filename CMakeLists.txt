@@ -270,56 +270,109 @@ set(ASIO_COMMON_LIBS
 #         JsonCpp::JsonCpp
 # )
 # # use jsoncpp
-add_library(jsoncpp_csession
-    "06_jsoncpp/src/csession.cc"
+# add_library(jsoncpp_csession
+#     "06_jsoncpp/src/csession.cc"
+# )
+# target_include_directories(jsoncpp_csession
+# PUBLIC
+#     "06_jsoncpp/include/"
+# )
+# target_link_libraries(jsoncpp_csession
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     jsoncpp_msgnode
+# )
+# add_library(jsoncpp_msgnode
+#     "06_jsoncpp/src/msgnode.cc"
+# )
+# target_include_directories(jsoncpp_msgnode
+# PUBLIC
+#     "06_jsoncpp/include/"
+# )
+# target_link_libraries(jsoncpp_msgnode
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+# add_library(jsoncpp_cserver
+#     "06_jsoncpp/src/cserver.cc"
+# )
+# # target_include_directories(jsoncpp_cserver
+# # )
+# target_link_libraries(jsoncpp_cserver
+# PUBLIC
+#     jsoncpp_msgnode
+#     jsoncpp_csession
+# )
+# add_executable(jsoncpp_async_cserver
+#     "06_jsoncpp/src/async_cserver.cc"
+# )
+# target_link_libraries(jsoncpp_async_cserver
+#     jsoncpp_cserver
+# )
+# add_executable(jsoncpp_cclient
+#     "06_jsoncpp/src/cclient.cc"
+# )
+# target_include_directories(jsoncpp_cclient
+# PUBLIC
+#     "06_jsoncpp/include/"
+# )
+# target_link_libraries(jsoncpp_cclient
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+# )
+
+# # 06 粘包优化
+add_library(07_csession
+    "07_粘包处理优化/src/csession.cc"
 )
-target_include_directories(jsoncpp_csession
+target_include_directories(07_csession
 PUBLIC
-    "06_jsoncpp/include/"
+    "07_粘包处理优化/include/"
 )
-target_link_libraries(jsoncpp_csession
+target_link_libraries(07_csession
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
-    jsoncpp_msgnode
+    07_msgnode
 )
-add_library(jsoncpp_msgnode
-    "06_jsoncpp/src/msgnode.cc"
+add_library(07_msgnode
+    "07_粘包处理优化/src/msgnode.cc"
 )
-target_include_directories(jsoncpp_msgnode
+target_include_directories(07_msgnode
 PUBLIC
-    "06_jsoncpp/include/"
+    "07_粘包处理优化/include/"
 )
-target_link_libraries(jsoncpp_msgnode
+target_link_libraries(07_msgnode
 PUBLIC
     ${ASIO_COMMON_LIBS}
 )
-add_library(jsoncpp_cserver
-    "06_jsoncpp/src/cserver.cc"
+add_library(07_cserver
+    "07_粘包处理优化/src/cserver.cc"
 )
 # target_include_directories(jsoncpp_cserver
 # )
-target_link_libraries(jsoncpp_cserver
+target_link_libraries(07_cserver
 PUBLIC
-    jsoncpp_msgnode
-    jsoncpp_csession
+    07_msgnode
+    07_csession
 )
-add_executable(jsoncpp_async_cserver
-    "06_jsoncpp/src/async_cserver.cc"
+add_executable(07_async_cserver
+    "07_粘包处理优化/src/async_cserver.cc"
 )
-target_link_libraries(jsoncpp_async_cserver
-    jsoncpp_cserver
+target_link_libraries(07_async_cserver
+    07_cserver
 )
-add_executable(jsoncpp_cclient
-    "06_jsoncpp/src/cclient.cc"
+add_executable(07_cclient
+    "07_粘包处理优化/src/cclient.cc"
 )
-target_include_directories(jsoncpp_cclient
+target_include_directories(07_cclient
 PUBLIC
-    "06_jsoncpp/include/"
+    "07_粘包处理优化/include/"
 )
-target_link_libraries(jsoncpp_cclient
+target_link_libraries(07_cclient
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
 )
-
