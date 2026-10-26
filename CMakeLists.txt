@@ -323,55 +323,108 @@ set(ASIO_COMMON_LIBS
 #     JsonCpp::JsonCpp
 # )
 
-# # 06 粘包优化
-add_library(07_csession
-    "07_粘包处理优化/src/csession.cc"
+# # 07 粘包优化
+# add_library(07_csession
+#     "07_粘包处理优化/src/csession.cc"
+# )
+# target_include_directories(07_csession
+# PUBLIC
+#     "07_粘包处理优化/include/"
+# )
+# target_link_libraries(07_csession
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     07_msgnode
+# )
+# add_library(07_msgnode
+#     "07_粘包处理优化/src/msgnode.cc"
+# )
+# target_include_directories(07_msgnode
+# PUBLIC
+#     "07_粘包处理优化/include/"
+# )
+# target_link_libraries(07_msgnode
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+# add_library(07_cserver
+#     "07_粘包处理优化/src/cserver.cc"
+# )
+# # target_include_directories(jsoncpp_cserver
+# # )
+# target_link_libraries(07_cserver
+# PUBLIC
+#     07_msgnode
+#     07_csession
+# )
+# add_executable(07_async_cserver
+#     "07_粘包处理优化/src/async_cserver.cc"
+# )
+# target_link_libraries(07_async_cserver
+#     07_cserver
+# )
+# add_executable(07_cclient
+#     "07_粘包处理优化/src/cclient.cc"
+# )
+# target_include_directories(07_cclient
+# PUBLIC
+#     "07_粘包处理优化/include/"
+# )
+# target_link_libraries(07_cclient
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+# )
+
+# 08_添加逻辑层 
+# 改自 07_粘包处理优化
+add_library(08_csession             
+    "08_添加逻辑层/src/csession.cc"
 )
-target_include_directories(07_csession
+target_include_directories(08_csession
 PUBLIC
-    "07_粘包处理优化/include/"
+    "08_添加逻辑层/include/"
 )
-target_link_libraries(07_csession
+target_link_libraries(08_csession
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
-    07_msgnode
+    08_msgnode
 )
-add_library(07_msgnode
-    "07_粘包处理优化/src/msgnode.cc"
+add_library(08_msgnode
+    "08_添加逻辑层/src/msgnode.cc"
 )
-target_include_directories(07_msgnode
+target_include_directories(08_msgnode
 PUBLIC
-    "07_粘包处理优化/include/"
+    "08_添加逻辑层/include/"
 )
-target_link_libraries(07_msgnode
+target_link_libraries(08_msgnode
 PUBLIC
     ${ASIO_COMMON_LIBS}
 )
-add_library(07_cserver
-    "07_粘包处理优化/src/cserver.cc"
+add_library(08_cserver
+    "08_添加逻辑层/src/cserver.cc"
 )
-# target_include_directories(jsoncpp_cserver
-# )
-target_link_libraries(07_cserver
+target_link_libraries(08_cserver
 PUBLIC
-    07_msgnode
-    07_csession
+    08_msgnode
+    08_csession
 )
-add_executable(07_async_cserver
-    "07_粘包处理优化/src/async_cserver.cc"
+add_executable(08_async_cserver
+    "08_添加逻辑层/src/async_cserver.cc"
 )
-target_link_libraries(07_async_cserver
-    07_cserver
+target_link_libraries(08_async_cserver
+    08_cserver
 )
-add_executable(07_cclient
-    "07_粘包处理优化/src/cclient.cc"
+add_executable(08_cclient
+    "08_添加逻辑层/src/cclient.cc"
 )
-target_include_directories(07_cclient
+target_include_directories(08_cclient
 PUBLIC
-    "07_粘包处理优化/include/"
+    "08_添加逻辑层/include/"
 )
-target_link_libraries(07_cclient
+target_link_libraries(08_cclient
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
