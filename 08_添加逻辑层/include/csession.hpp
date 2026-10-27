@@ -40,8 +40,8 @@ class csession:public std::enable_shared_from_this<csession>{
     void handle_read_head_total(const boost::system::error_code& ec,size_t byte_transfered);  //读 id 和消息长度
     void handle_read_msg(const boost::system::error_code& ec,size_t byte_transfered); //读消息正文
     void handle_write( const boost::system::error_code& ec);
-    std::queue<std::shared_ptr<msgnode>> _send_queue; //发送队列
-    std::queue<std::shared_ptr<msgnode>> _recv_queue; //接受队列
+    std::queue<std::shared_ptr<send_msgnode>> _send_queue; //发送队列
+    std::queue<std::shared_ptr<recv_msgnode>> _recv_queue; //接受队列
     bool _recv_padding;   //接收状态标志  true:正在接收
     bool _send_padding;   //发送状态标志  false:未在发送
     std::mutex _send_lock; //发送锁 
