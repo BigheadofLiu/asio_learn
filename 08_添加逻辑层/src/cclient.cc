@@ -58,14 +58,15 @@ int main(){
                 std::cout<<"enter message:";
                 char request[MAX_LENGTH] {0};
                 std::cin.getline(request,MAX_LENGTH);
-                uint16_t local_msg_id= static_cast<uint16_t>(msg_id::login);
-                auto request_length=strlen(request); //本机长度
-                uint32_t network_length=boost::endian::native_to_big(static_cast<uint32_t>(strlen(request)));  //网络长度
-                char send_data[MAX_LENGTH+HEAD_LENGTH]{0};
-                memcpy(send_data, &network_length, HEAD_LENGTH);
-                memcpy(send_data + HEAD_LENGTH, request, request_length);
-                asio::write(sock, asio::buffer(send_data, request_length + HEAD_LENGTH));
-                
+                uint16_t local_msg_id= msg_id::login;
+                uint32_t local_length=strlen(request); //本机长度
+                uint16_t network_msg_id=boost::endian::native_to_big(local_msg_id);
+                uint32_t network_length=boost::endian::native_to_big(local_length);  //网络长度
+                char send_data[MAX_LENGTH+HEAD_TOTAL_LENGTH]{0};
+                memcpy(send_data,&network_msg_id,ID_LENGTH);
+                memcpy(send_data+ID_LENGTH, &network_length, HEAD_LENGTH);
+                memcpy(send_data + HEAD_TOTAL_LENGTH, request, local_length);
+                asio::write(sock, asio::buffer(send_data, local_length + HEAD_TOTAL_LENGTH));
                 {
                     std::lock_guard<std::mutex> lock(mutex);
                     can_send=false;
@@ -82,22 +83,25 @@ int main(){
                     return !can_send;
                     });
                 }
-                char reply_head[HEAD_LENGTH]{0};
+                char reply_head[HEAD_TOTAL_LENGTH] {0};
                 //读消息头
-                asio::read(sock,asio::buffer(reply_head,HEAD_LENGTH));
+                asio::read(sock,asio::buffer(reply_head,HEAD_TOTAL_LENGTH));
+                uint16_t network_msg_id {0};
                 uint32_t network_length=0;
-                memcpy(&network_length, reply_head, HEAD_LENGTH);
-                uint32_t reply_length=boost::endian::big_to_native(network_length);
-                if(reply_length>MAX_LENGTH){
+                memcpy(&network_msg_id,reply_head,ID_LENGTH );
+                memcpy(&network_length, reply_head+ID_LENGTH, HEAD_LENGTH);
+                uint16_t local_msg_id=boost::endian::big_to_native(network_msg_id);
+                uint32_t local_length=boost::endian::big_to_native(network_length);
+                if(local_length>MAX_LENGTH){
                     throw std::runtime_error("reply too large");
                 }
                 //读消息正文
                 char msg[MAX_LENGTH] {0};
-                size_t msg_length=asio::read(sock,asio::buffer(msg,reply_length));
+                size_t msg_length=asio::read(sock,asio::buffer(msg,local_length));
                 std::cout<<"reply is:";
-                std::cout.write(msg,reply_length)<<std::endl;
-                std::cout<<"reply length is:"<<reply_length<<std::endl;
-
+                std::cout.write(msg,msg_length)<<std::endl;
+                std::cout<<"reply length is:"<<local_length<<std::endl;
+                std::cout<<"msg id is:"<<local_msg_id<<std::endl;
                 {
                     std::lock_guard<std::mutex> lock(mutex);
                     can_send = true; // 轮到发送线程

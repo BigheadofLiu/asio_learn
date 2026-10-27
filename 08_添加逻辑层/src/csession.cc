@@ -191,6 +191,6 @@ void csession::handle_write(const boost::system::error_code& ec){
         std::bind(&csession::handle_write,self,std::placeholders::_1));
     }else{
             _cserver->clear_csession(_uuid);
-            std::cout<<"write error:"<<" "<<ec.value()<<" "<<ec.message()<<"\n";
+            std::cout<<"write error:"<<" "<<ec.value()<<" "<<ec.message()<<std::endl;
     }
 }
