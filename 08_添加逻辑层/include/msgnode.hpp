@@ -1,10 +1,12 @@
 #pragma once
+#include "logic_system.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <vector>
 #include <memory>
 
 class csession;
+class logic_system;
 
 class msgnode{
 public:
@@ -28,6 +30,7 @@ protected:
 
 class recv_msgnode:public msgnode{
     friend csession;
+    friend logic_system;
 public: 
     recv_msgnode(size_t total_length,uint16_t msg_id);
 private:

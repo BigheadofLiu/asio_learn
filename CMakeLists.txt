@@ -392,6 +392,7 @@ PUBLIC
     JsonCpp::JsonCpp
     08_msgnode
 )
+
 add_library(08_msgnode
     "08_添加逻辑层/src/msgnode.cc"
 )
@@ -402,7 +403,9 @@ PUBLIC
 target_link_libraries(08_msgnode
 PUBLIC
     ${ASIO_COMMON_LIBS}
+    logic_system
 )
+
 add_library(08_cserver
     "08_添加逻辑层/src/cserver.cc"
 )
@@ -411,12 +414,14 @@ PUBLIC
     08_msgnode
     08_csession
 )
+
 add_executable(08_async_cserver
     "08_添加逻辑层/src/async_cserver.cc"
 )
 target_link_libraries(08_async_cserver
     08_cserver
 )
+
 add_executable(08_cclient
     "08_添加逻辑层/src/cclient.cc"
 )
@@ -428,4 +433,37 @@ target_link_libraries(08_cclient
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
+)
+
+# add_library(singleton
+#     "08_添加逻辑层/src/singleton.cc"
+# )
+# target_include_directories(singleton
+# PUBLIC
+#     "08_添加逻辑层/include/"
+# )
+
+add_library(logic_system
+    "08_添加逻辑层/src/logic_system.cc"
+)
+target_include_directories(logic_system
+PUBLIC
+    "08_添加逻辑层/include/"
+)
+target_link_libraries(logic_system
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    logic_node
+    08_csession
+)
+
+add_library(logic_node
+    "08_添加逻辑层/src/logic_node.cc"
+)
+target_include_directories(logic_node
+PUBLIC
+    "08_添加逻辑层/include/"
+)
+target_link_libraries(logic_node
+    logic_system
 )
