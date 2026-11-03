@@ -170,6 +170,7 @@ void csession::handle_read_msg(const boost::system::error_code& ec,size_t byte_t
     // csession::send(_recv_msg_node->_data.data(),byte_transfered,_recv_msg_node->_msg_id);
 
     //改用逻辑层投递消息
+    _recv_msg_node->_cur_length+=byte_transfered;
     auto self=shared_from_this();
     logic_system::get_instance()->post_logic_msg_to_queue(std::make_shared<logic_node>(self,_recv_msg_node));
     //处理下一个头文件

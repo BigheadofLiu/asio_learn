@@ -13,6 +13,7 @@
 #include <mutex>
 #include <random>
 #include <time.h>
+#include <json/json.h>
 
 #define MAX_LENGTH 1024*2
 #define HEAD_LENGTH sizeof(uint32_t) 
@@ -23,10 +24,9 @@ namespace asio=boost::asio;
 namespace ip=boost::asio::ip;
 
 enum msg_id:uint16_t{
-    echo=1001,
-    login=1002,
-    chat=1003,
-    transfrer=1004
+    _msg_hello_world = 1001,
+    _msg_alive = 1002,
+    _msg_chat = 1003
 };
 
 int main(){
@@ -58,14 +58,18 @@ int main(){
                 std::cout<<"enter message:";
                 char request[MAX_LENGTH] {0};
                 std::cin.getline(request,MAX_LENGTH);
-                uint16_t local_msg_id= msg_id::login;
-                uint32_t local_length=strlen(request); //本机长度
+                uint16_t local_msg_id= msg_id::_msg_hello_world;
+                Json::Value root;
+                root["id"]=local_msg_id;
+                root["data"]=request;
+                std::string json_request=root.toStyledString();
+                uint32_t local_length=json_request.length(); //本机长度
                 uint16_t network_msg_id=boost::endian::native_to_big(local_msg_id);
                 uint32_t network_length=boost::endian::native_to_big(local_length);  //网络长度
                 char send_data[MAX_LENGTH+HEAD_TOTAL_LENGTH]{0};
                 memcpy(send_data,&network_msg_id,ID_LENGTH);
                 memcpy(send_data+ID_LENGTH, &network_length, HEAD_LENGTH);
-                memcpy(send_data + HEAD_TOTAL_LENGTH, request, local_length);
+                memcpy(send_data + HEAD_TOTAL_LENGTH, json_request.data(), local_length);
                 asio::write(sock, asio::buffer(send_data, local_length + HEAD_TOTAL_LENGTH));
                 {
                     std::lock_guard<std::mutex> lock(mutex);
@@ -84,7 +88,7 @@ int main(){
                     });
                 }
                 char reply_head[HEAD_TOTAL_LENGTH] {0};
-                //读消息头
+                //读消息头 id+length
                 asio::read(sock,asio::buffer(reply_head,HEAD_TOTAL_LENGTH));
                 uint16_t network_msg_id {0};
                 uint32_t network_length=0;
@@ -98,8 +102,11 @@ int main(){
                 //读消息正文
                 char msg[MAX_LENGTH] {0};
                 size_t msg_length=asio::read(sock,asio::buffer(msg,local_length));
+                Json::Value root;
+                Json::Reader reader;
+                reader.parse(msg,root);
                 std::cout<<"reply is:";
-                std::cout.write(msg,msg_length)<<std::endl;
+                std::cout<<root["data"].asString()<<" "<<root["id"].asUInt()<<std::endl;
                 std::cout<<"reply length is:"<<local_length<<std::endl;
                 std::cout<<"msg id is:"<<local_msg_id<<std::endl;
                 {
@@ -118,4 +125,3 @@ int main(){
     }
     return 0;
 }
-
