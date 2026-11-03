@@ -1,5 +1,4 @@
 #pragma once
-#include "logic_system.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <vector>

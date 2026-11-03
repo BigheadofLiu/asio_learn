@@ -10,6 +10,7 @@
 
 
 class cserver;
+class logic_system;
 // #define MAX_LENGTH 1024;
 
 class csession:public std::enable_shared_from_this<csession>{

@@ -391,6 +391,7 @@ PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
     08_msgnode
+    logic_system
 )
 
 add_library(08_msgnode
@@ -403,7 +404,6 @@ PUBLIC
 target_link_libraries(08_msgnode
 PUBLIC
     ${ASIO_COMMON_LIBS}
-    logic_system
 )
 
 add_library(08_cserver
@@ -411,7 +411,6 @@ add_library(08_cserver
 )
 target_link_libraries(08_cserver
 PUBLIC
-    08_msgnode
     08_csession
 )
 
@@ -453,8 +452,8 @@ PUBLIC
 target_link_libraries(logic_system
 PUBLIC
     ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
     logic_node
-    08_csession
 )
 
 add_library(logic_node
@@ -465,5 +464,6 @@ PUBLIC
     "08_添加逻辑层/include/"
 )
 target_link_libraries(logic_node
-    logic_system
+PUBLIC
+    ${ASIO_COMMON_LIBS}
 )

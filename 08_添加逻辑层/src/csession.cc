@@ -1,5 +1,7 @@
 #include "csession.hpp"
 #include "cserver.hpp"
+#include "logic_node.hpp"
+#include "logic_system.hpp"
 #include "msgnode.hpp"
 #include <algorithm>
 #include <boost/uuid/uuid.hpp>
@@ -157,23 +159,27 @@ void csession::handle_read_msg(const boost::system::error_code& ec,size_t byte_t
         _cserver->clear_csession(_uuid);
         return;
     }
-    //没有使用 json protocbuf 
-    std::cout<<"receive msg is:";
-    for(auto i:_recv_msg_node->_data){
-        std::cout<<i;
-    }
-    std::cout<<std::endl;
-    std::cout<<"msg id is:"<<_recv_msg_node->_msg_id;
-    //写回
-    csession::send(_recv_msg_node->_data.data(),byte_transfered,_recv_msg_node->_msg_id);
-    //处理下一个头文件
+    // //没有使用 json protocbuf 
+    // std::cout<<"receive msg is:";
+    // for(auto i:_recv_msg_node->_data){
+    //     std::cout<<i;
+    // }
+    // std::cout<<std::endl;
+    // std::cout<<"msg id is:"<<_recv_msg_node->_msg_id;
+    // //写回
+    // csession::send(_recv_msg_node->_data.data(),byte_transfered,_recv_msg_node->_msg_id);
+
+    //改用逻辑层投递消息
     auto self=shared_from_this();
+    logic_system::get_instance()->post_logic_msg_to_queue(std::make_shared<logic_node>(self,_recv_msg_node));
+    //处理下一个头文件
     _recv_head_node->clear();
     boost::asio::async_read(
         _socket,
         boost::asio::buffer(_recv_head_node->_data,_head_total_length),
         std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2)
     );
+
 }
 
 void csession::handle_write(const boost::system::error_code& ec){

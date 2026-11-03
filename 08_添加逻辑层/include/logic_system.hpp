@@ -34,8 +34,8 @@ private:
     std::queue<std::shared_ptr<logic_node>> _logic_node_queue; //逻辑线程队列
     std::mutex _mutex; //互斥量
     std::condition_variable _consume;  //线程同步
-    bool _b_stop; //优雅退出
-    std::map<std::uint16_t,full_call_back> _full_call_backs;  //id <---> full_call_back 根据 id 找到对应的处理函数
+    bool _b_stop; //优雅退出标志
+    std::map<std::uint16_t,full_call_back> _full_call_backs_maps;  //id <---> full_call_back 根据 id 找到对应的处理函数
     enum{
         _msg_hello_world = 1001,
         _msg_alive = 1002,
