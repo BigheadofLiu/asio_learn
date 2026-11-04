@@ -15,7 +15,11 @@ logic_system::logic_system():
     _b_stop(false)  //默认为 false 未退出
 {
     register_call_back();
-    _work_thread=std::thread(&logic_system::deal_msg,this);
+    // _work_thread=std::thread(&logic_system::deal_msg,this);
+    //改用更现代的 lambda
+    _work_thread=std::thread([this](){
+        deal_msg();
+    });
 }
 
 void logic_system::register_call_back(){
