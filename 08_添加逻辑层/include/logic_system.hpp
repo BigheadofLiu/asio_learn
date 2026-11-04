@@ -27,8 +27,8 @@ public:
     void post_logic_msg_to_queue(std::shared_ptr<logic_node> logic_node); //加入逻辑线程队列
 private:
     logic_system(); //默认构造
-    void deal_msg(); //处理数据
-    void register_call_back(); //注册回调？
+    void deal_msg(); //处理数据  
+    void register_call_back(); //注册消息类型 对应的回调函数
     void hello_world_call_back(std::shared_ptr<csession> session,std::uint16_t msg_id,const std::string msg_data); //回调
     std::thread _work_thread; //工作线程
     std::queue<std::shared_ptr<logic_node>> _logic_node_queue; //逻辑线程队列

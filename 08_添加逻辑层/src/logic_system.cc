@@ -38,7 +38,7 @@ void logic_system::hello_world_call_back(std::shared_ptr<csession> session,std::
     Json::Reader read;
     Json::Value book;
     read.parse(msg_data,book);
-    std::cout<<"recived data is:"<<book["data"].asString()<<" "<<"id is:"<<book["id"].asInt()<<std::endl; 
+    std::cout<<"recived data is:"<<book["data"].asString()<<","<<"id is:"<<book["id"].asInt()<<std::endl; 
     std::string return_msg=book.toStyledString();
     session->send(return_msg,book["id"].asUInt());
 }

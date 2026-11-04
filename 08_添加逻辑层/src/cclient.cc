@@ -106,8 +106,9 @@ int main(){
                 Json::Reader reader;
                 reader.parse(msg,root);
                 std::cout<<"reply is:";
-                std::cout<<root["data"].asString()<<" "<<root["id"].asUInt()<<std::endl;
+                std::cout<<root["data"].asString()<<"，"<<root["id"].asUInt()<<std::endl;
                 std::cout<<"reply length is:"<<local_length<<std::endl;
+                std::cout<<"data length is :"<<root["data"].toStyledString().length()<<std::endl;
                 std::cout<<"msg id is:"<<local_msg_id<<std::endl;
                 {
                     std::lock_guard<std::mutex> lock(mutex);

@@ -124,7 +124,7 @@ void csession::handle_read_head_total(const boost::system::error_code& ec,size_t
         memcpy(&network_length, _recv_head_node->_data.data()+_id_length, byte_transfered-_id_length);
         auto local_length=boost::endian::big_to_native(network_length);
         auto local_id=boost::endian::big_to_native(network_id);
-        std::cout<<"data length is:"<<local_length<<","<<"data id is:"<<local_id<<std::endl;
+        std::cout<<"json_data length is:"<<local_length<<","<<"data id is:"<<local_id<<std::endl;
         if(local_length>_max_length){
             std::cout<<"invalid data length:"<<local_length<<std::endl;
             _cserver->clear_csession(_uuid);
