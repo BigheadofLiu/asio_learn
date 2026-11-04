@@ -88,7 +88,7 @@ logic_system::~logic_system(){
 }
 
 void logic_system::post_logic_msg_to_queue(std::shared_ptr<logic_node> logic_node){
-    std::unique_lock<std::mutex> lock(_mutex);  
+    std::unique_lock<std::mutex> lock(_mutex);
     _logic_node_queue.push(logic_node);
     if(_logic_node_queue.size()==1){
         _consume.notify_one();
