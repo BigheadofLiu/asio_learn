@@ -379,91 +379,193 @@ set(ASIO_COMMON_LIBS
 
 # 08_添加逻辑层 
 # 改自 07_粘包处理优化
-add_library(08_csession             
-    "08_添加逻辑层/src/csession.cc"
-)
-target_include_directories(08_csession
-PUBLIC
-    "08_添加逻辑层/include/"
-)
-target_link_libraries(08_csession
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
-    08_msgnode
-    logic_system
-)
-
-add_library(08_msgnode
-    "08_添加逻辑层/src/msgnode.cc"
-)
-target_include_directories(08_msgnode
-PUBLIC
-    "08_添加逻辑层/include/"
-)
-target_link_libraries(08_msgnode
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-)
-
-add_library(08_cserver
-    "08_添加逻辑层/src/cserver.cc"
-)
-target_link_libraries(08_cserver
-PUBLIC
-    08_csession
-)
-
-add_executable(08_async_cserver
-    "08_添加逻辑层/src/async_cserver.cc"
-)
-target_link_libraries(08_async_cserver
-    08_cserver
-)
-
-add_executable(08_cclient
-    "08_添加逻辑层/src/cclient.cc"
-)
-target_include_directories(08_cclient
-PUBLIC
-    "08_添加逻辑层/include/"
-)
-target_link_libraries(08_cclient
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
-)
-
-# add_library(singleton
-#     "08_添加逻辑层/src/singleton.cc"
+# add_library(08_csession             
+#     "08_添加逻辑层/src/csession.cc"
 # )
-# target_include_directories(singleton
+# target_include_directories(08_csession
 # PUBLIC
 #     "08_添加逻辑层/include/"
 # )
+# target_link_libraries(08_csession
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     08_msgnode
+#     logic_system
+# )
 
-add_library(logic_system
-    "08_添加逻辑层/src/logic_system.cc"
+# add_library(08_msgnode
+#     "08_添加逻辑层/src/msgnode.cc"
+# )
+# target_include_directories(08_msgnode
+# PUBLIC
+#     "08_添加逻辑层/include/"
+# )
+# target_link_libraries(08_msgnode
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+
+# add_library(08_cserver
+#     "08_添加逻辑层/src/cserver.cc"
+# )
+# target_link_libraries(08_cserver
+# PUBLIC
+#     08_csession
+# )
+
+# add_executable(08_async_cserver
+#     "08_添加逻辑层/src/async_cserver.cc"
+# )
+# target_link_libraries(08_async_cserver
+#     08_cserver
+# )
+
+# add_executable(08_cclient
+#     "08_添加逻辑层/src/cclient.cc"
+# )
+# target_include_directories(08_cclient
+# PUBLIC
+#     "08_添加逻辑层/include/"
+# )
+# target_link_libraries(08_cclient
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+# )
+
+# # add_library(singleton
+# #     "08_添加逻辑层/src/singleton.cc"
+# # )
+# # target_include_directories(singleton
+# # PUBLIC
+# #     "08_添加逻辑层/include/"
+# # )
+
+# add_library(logic_system
+#     "08_添加逻辑层/src/logic_system.cc"
+# )
+# target_include_directories(logic_system
+# PUBLIC
+#     "08_添加逻辑层/include/"
+# )
+# target_link_libraries(logic_system
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     logic_node
+# )
+
+# add_library(logic_node
+#     "08_添加逻辑层/src/logic_node.cc"
+# )
+# target_include_directories(logic_node
+# PUBLIC
+#     "08_添加逻辑层/include/"
+# )
+# target_link_libraries(logic_node
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+
+# 09_多线程模型_ioServerPoll
+# 改自 08_添加逻辑层，增加 io_context 线程池
+add_library(09_msgnode
+    "09_多线程模型_ioServerPoll/src/msgnode.cc"
 )
-target_include_directories(logic_system
+target_include_directories(09_msgnode
 PUBLIC
-    "08_添加逻辑层/include/"
+    "09_多线程模型_ioServerPoll/include/"
 )
-target_link_libraries(logic_system
+target_link_libraries(09_msgnode
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+)
+
+add_library(09_logic_node
+    "09_多线程模型_ioServerPoll/src/logic_node.cc"
+)
+target_include_directories(09_logic_node
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_logic_node
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    09_msgnode
+)
+
+add_library(09_logic_system
+    "09_多线程模型_ioServerPoll/src/logic_system.cc"
+)
+target_include_directories(09_logic_system
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_logic_system
 PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
-    logic_node
+    09_logic_node
 )
 
-add_library(logic_node
-    "08_添加逻辑层/src/logic_node.cc"
+add_library(09_csession
+    "09_多线程模型_ioServerPoll/src/csession.cc"
 )
-target_include_directories(logic_node
+target_include_directories(09_csession
 PUBLIC
-    "08_添加逻辑层/include/"
+    "09_多线程模型_ioServerPoll/include/"
 )
-target_link_libraries(logic_node
+target_link_libraries(09_csession
 PUBLIC
     ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
+    09_msgnode
+    09_logic_system
+)
+
+add_library(09_io_service_pool
+    "09_多线程模型_ioServerPoll/src/asio_io_service_poll.cc"
+)
+target_include_directories(09_io_service_pool
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_io_service_pool
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+)
+
+add_library(09_cserver
+    "09_多线程模型_ioServerPoll/src/cserver.cc"
+)
+target_include_directories(09_cserver
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_cserver
+PUBLIC
+    09_csession
+    09_io_service_pool
+)
+
+add_executable(09_async_cserver
+    "09_多线程模型_ioServerPoll/src/async_cserver.cc"
+)
+target_link_libraries(09_async_cserver
+PRIVATE
+    09_cserver
+)
+
+add_executable(09_cclient
+    "09_多线程模型_ioServerPoll/src/cclient.cc"
+)
+target_include_directories(09_cclient
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_cclient
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
 )
