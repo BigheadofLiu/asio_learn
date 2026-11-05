@@ -4,7 +4,6 @@
 #include <iostream>
 #include <memory>
 #include <utility>
-#include <asio_io_service_poll.hpp>
 
 cserver::cserver(boost::asio::io_context& ioc,unsigned short port)
     :_ioc(ioc),_port(port),
@@ -18,9 +17,7 @@ void cserver::clear_csession(const std::string uuid){
 }
 
 void cserver::start_accept(){
-    auto& ioc=asio_io_service_poll::get_instance()->get_io_service();
-    //使用io_services_poll中得到的 ioc
-    auto new_session=std::make_shared<csession>(ioc,this);  
+    auto new_session=std::make_shared<csession>(_ioc,this);  
     _acc.async_accept(new_session->get_socket(),std::bind(&cserver::handle_accept,this,new_session,std::placeholders::_1));
 }
 
