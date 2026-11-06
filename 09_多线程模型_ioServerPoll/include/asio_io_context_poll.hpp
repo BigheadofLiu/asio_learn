@@ -20,7 +20,8 @@ public:
     boost::asio::io_context& get_io_service();
     void stop();
 private:
-    asio_io_context_poll(std::size_t size=std::thread::hardware_concurrency());
+    asio_io_context_poll();  
+    const std::size_t _size;  //cpu 核数
     std::vector<boost::asio::io_context> _io_contexts;
     std::vector<_work_guard> _work_guards;
     std::vector<std::thread> _threads;
