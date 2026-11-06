@@ -524,14 +524,14 @@ PUBLIC
     09_logic_system
 )
 
-add_library(09_io_service_pool
-    "09_多线程模型_ioServerPoll/src/asio_io_service_poll.cc"
+add_library(09_io_context_pool
+    "09_多线程模型_ioServerPoll/src/asio_io_context_poll.cc"
 )
-target_include_directories(09_io_service_pool
+target_include_directories(09_io_context_pool
 PUBLIC
     "09_多线程模型_ioServerPoll/include/"
 )
-target_link_libraries(09_io_service_pool
+target_link_libraries(09_io_context_pool
 PUBLIC
     ${ASIO_COMMON_LIBS}
 )
@@ -546,7 +546,7 @@ PUBLIC
 target_link_libraries(09_cserver
 PUBLIC
     09_csession
-    09_io_service_pool
+    09_io_context_pool
 )
 
 add_executable(09_async_cserver
