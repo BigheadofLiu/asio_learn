@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <exception>
 #include <iostream>
 #include <iterator>
 #include <ostream>
@@ -14,6 +15,8 @@
 #include <random>
 #include <time.h>
 #include <json/json.h>
+#include <chrono>
+#include <vector>
 
 #define MAX_LENGTH 1024*2
 #define HEAD_LENGTH sizeof(uint32_t) 
@@ -30,8 +33,7 @@ enum msg_id:uint16_t{
 };
 
 int main(){
-    try
-    {
+    try {
         asio::io_context ioc;
         ip::tcp::socket sock(ioc);
         ip::tcp::endpoint server_ep(ip::make_address("127.0.0.1"),8899);

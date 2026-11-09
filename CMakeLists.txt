@@ -569,3 +569,16 @@ PUBLIC
     ${ASIO_COMMON_LIBS}
     JsonCpp::JsonCpp
 )
+
+add_executable(09_cclient_test
+    "09_多线程模型_ioServerPoll/src/cclient_test.cc"
+)
+target_include_directories(09_cclient_test
+PUBLIC
+    "09_多线程模型_ioServerPoll/include/"
+)
+target_link_libraries(09_cclient_test
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
+)
