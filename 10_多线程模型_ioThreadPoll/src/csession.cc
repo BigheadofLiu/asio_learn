@@ -26,6 +26,7 @@ csession::csession(boost::asio::io_context& ioc,cserver* cserver)
     _cserver(cserver),
     _recv_padding(false),
     _send_padding(false),
+    _strand(ioc.get_executor()),
     _head_status(false),
     _recv_head_node(std::make_shared<msgnode>(_head_total_length)){
     auto uuid=boost::uuids::random_generator()();
@@ -42,7 +43,10 @@ void csession::start(){
     boost::asio::async_read(
         _socket,
         boost::asio::buffer(_recv_head_node->_data,_head_total_length),
-        std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2));
+        //回调函数绑定到_strand中
+        // std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2));
+        boost::asio::bind_executor(_strand,std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2))
+    );
 }
 
 void csession::send(const char* msg,size_t total_length,uint16_t msg_id){
@@ -63,7 +67,9 @@ void csession::send(const char* msg,size_t total_length,uint16_t msg_id){
     auto self=shared_from_this();
     //从发送队列 取出消息发送
     boost::asio::async_write(_socket,boost::asio::buffer(first_msgnode->_data,first_msgnode->_max_length),
-    std::bind(&csession::handle_write,self,std::placeholders::_1));
+    // std::bind(&csession::handle_write,self,std::placeholders::_1)
+        boost::asio::bind_executor(_strand,std::bind(&csession::handle_write,self,std::placeholders::_1))
+    );
  }
 
 void csession::send(const std::string msg,uint16_t msg_id){
@@ -84,7 +90,9 @@ void csession::send(const std::string msg,uint16_t msg_id){
     auto self=shared_from_this();
     //从发送队列 取出消息发送
     boost::asio::async_write(_socket,boost::asio::buffer(first_msgnode->_data,first_msgnode->_max_length),
-    std::bind(&csession::handle_write,self,std::placeholders::_1));
+    // std::bind(&csession::handle_write,self,std::placeholders::_1)
+    boost::asio::bind_executor(_strand,std::bind(&csession::handle_write,self,std::placeholders::_1))
+    );
 }
 
 boost::asio::ip::tcp::socket& csession::get_socket(){
@@ -136,7 +144,8 @@ void csession::handle_read_head_total(const boost::system::error_code& ec,size_t
         boost::asio::async_read(
             _socket,
             boost::asio::buffer(_recv_msg_node->_data,local_length),
-            std::bind(&csession::handle_read_msg,self,std::placeholders::_1,std::placeholders::_2)
+            // std::bind(&csession::handle_read_msg,self,std::placeholders::_1,std::placeholders::_2)
+            boost::asio::bind_executor(_strand,std::bind(&csession::handle_read_msg,self,std::placeholders::_1,std::placeholders::_2))
         );
     }else {
         std::cout<<"read head error"<<"value:"<<ec.value()<<"message:"<<ec.message()<<std::endl;
@@ -178,9 +187,9 @@ void csession::handle_read_msg(const boost::system::error_code& ec,size_t byte_t
     boost::asio::async_read(
         _socket,
         boost::asio::buffer(_recv_head_node->_data,_head_total_length),
-        std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2)
+        // std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2)
+        boost::asio::bind_executor(_strand,std::bind(&csession::handle_read_head_total,self,std::placeholders::_1,std::placeholders::_2))
     );
-
 }
 
 void csession::handle_write(const boost::system::error_code& ec){
@@ -194,7 +203,9 @@ void csession::handle_write(const boost::system::error_code& ec){
         auto self=shared_from_this();
         auto& next_msgnode=_send_queue.front();
         boost::asio::async_write(_socket,boost::asio::buffer(next_msgnode->_data,next_msgnode->_max_length),
-        std::bind(&csession::handle_write,self,std::placeholders::_1));
+        // std::bind(&csession::handle_write,self,std::placeholders::_1)
+        boost::asio::bind_executor(_strand,std::bind(&csession::handle_write,self,std::placeholders::_1))
+        );
     }else{
             _cserver->clear_csession(_uuid);
             std::cout<<"write error:"<<" "<<ec.value()<<" "<<ec.message()<<std::endl;

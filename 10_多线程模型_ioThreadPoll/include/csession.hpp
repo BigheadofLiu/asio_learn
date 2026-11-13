@@ -47,7 +47,7 @@ class csession:public std::enable_shared_from_this<csession>{
     bool _send_padding;   //发送状态标志  false:未在发送
     std::mutex _send_lock; //发送锁 
     std::mutex _recv_lock; //接受锁
-
+    boost::asio::strand<boost::asio::io_context::executor_type> _strand; //用于保证线程安全
     //用于切包处理
     std::shared_ptr<recv_msgnode> _recv_msg_node; //消息正文
     std::shared_ptr<msgnode> _recv_head_node; //消息头  加入消息 id
