@@ -6,7 +6,8 @@ endif()
 
 project(asio_learn VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+# set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20) #use coroutine
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -585,115 +586,132 @@ set(ASIO_COMMON_LIBS
 
 # 10_多线程模型_ioThreadPoll
 # 使用线程池运行 io_context
-add_library(10_msgnode
-    "10_多线程模型_ioThreadPoll/src/msgnode.cc"
+# add_library(10_msgnode
+#     "10_多线程模型_ioThreadPoll/src/msgnode.cc"
+# )
+# target_include_directories(10_msgnode
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_msgnode
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+
+# add_library(10_logic_node
+#     "10_多线程模型_ioThreadPoll/src/logic_node.cc"
+# )
+# target_include_directories(10_logic_node
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_logic_node
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     10_msgnode
+# )
+
+# add_library(10_logic_system
+#     "10_多线程模型_ioThreadPoll/src/logic_system.cc"
+# )
+# target_include_directories(10_logic_system
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_logic_system
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     10_logic_node
+# )
+
+# add_library(10_csession
+#     "10_多线程模型_ioThreadPoll/src/csession.cc"
+# )
+# target_include_directories(10_csession
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_csession
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+#     10_msgnode
+#     10_logic_system
+# )
+
+# add_library(10_io_thread_pool
+#     "10_多线程模型_ioThreadPoll/src/asio_thread_poll.cc"
+# )
+# target_include_directories(10_io_thread_pool
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_io_thread_pool
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+# )
+
+# add_library(10_cserver
+#     "10_多线程模型_ioThreadPoll/src/cserver.cc"
+# )
+# target_include_directories(10_cserver
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_cserver
+# PUBLIC
+#     10_csession
+#     10_io_thread_pool
+# )
+
+# add_executable(10_async_cserver
+#     "10_多线程模型_ioThreadPoll/src/async_cserver.cc"
+# )
+# target_link_libraries(10_async_cserver
+# PRIVATE
+#     10_cserver
+# )
+
+# add_executable(10_cclient
+#     "10_多线程模型_ioThreadPoll/src/cclient.cc"
+# )
+# target_include_directories(10_cclient
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_cclient
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+# )
+
+# add_executable(10_cclient_test
+#     "10_多线程模型_ioThreadPoll/src/cclient_test.cc"
+# )
+# target_include_directories(10_cclient_test
+# PUBLIC
+#     "10_多线程模型_ioThreadPoll/include/"
+# )
+# target_link_libraries(10_cclient_test
+# PUBLIC
+#     ${ASIO_COMMON_LIBS}
+#     JsonCpp::JsonCpp
+# )
+
+# 11_使用协程并发
+add_executable(11_coroutine_server_demo
+    "11_协程并发服务器/demo/coroutine_server_demo.cc"
 )
-target_include_directories(10_msgnode
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_msgnode
+target_link_libraries(11_coroutine_server_demo
 PUBLIC
     ${ASIO_COMMON_LIBS}
 )
 
-add_library(10_logic_node
-    "10_多线程模型_ioThreadPoll/src/logic_node.cc"
+add_executable(11_client_demo
+    "11_协程并发服务器/demo/client_demo.cc"
 )
-target_include_directories(10_logic_node
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_logic_node
+target_link_libraries(11_client_demo
 PUBLIC
     ${ASIO_COMMON_LIBS}
-    10_msgnode
-)
-
-add_library(10_logic_system
-    "10_多线程模型_ioThreadPoll/src/logic_system.cc"
-)
-target_include_directories(10_logic_system
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_logic_system
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
-    10_logic_node
-)
-
-add_library(10_csession
-    "10_多线程模型_ioThreadPoll/src/csession.cc"
-)
-target_include_directories(10_csession
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_csession
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
-    10_msgnode
-    10_logic_system
-)
-
-add_library(10_io_thread_pool
-    "10_多线程模型_ioThreadPoll/src/asio_thread_poll.cc"
-)
-target_include_directories(10_io_thread_pool
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_io_thread_pool
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-)
-
-add_library(10_cserver
-    "10_多线程模型_ioThreadPoll/src/cserver.cc"
-)
-target_include_directories(10_cserver
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_cserver
-PUBLIC
-    10_csession
-    10_io_thread_pool
-)
-
-add_executable(10_async_cserver
-    "10_多线程模型_ioThreadPoll/src/async_cserver.cc"
-)
-target_link_libraries(10_async_cserver
-PRIVATE
-    10_cserver
-)
-
-add_executable(10_cclient
-    "10_多线程模型_ioThreadPoll/src/cclient.cc"
-)
-target_include_directories(10_cclient
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_cclient
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
-)
-
-add_executable(10_cclient_test
-    "10_多线程模型_ioThreadPoll/src/cclient_test.cc"
-)
-target_include_directories(10_cclient_test
-PUBLIC
-    "10_多线程模型_ioThreadPoll/include/"
-)
-target_link_libraries(10_cclient_test
-PUBLIC
-    ${ASIO_COMMON_LIBS}
-    JsonCpp::JsonCpp
 )
