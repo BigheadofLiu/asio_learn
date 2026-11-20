@@ -700,18 +700,146 @@ set(ASIO_COMMON_LIBS
 # )
 
 # 11_使用协程并发
+# ------------------------------------------------------------------------------
+
+# 纯头文件：单例模板
+add_library(11_singleton INTERFACE)
+target_include_directories(11_singleton
+    INTERFACE
+        "11_协程并发服务器/include"
+)
+
+# 纯头文件：协议常量
+add_library(11_constants INTERFACE)
+target_include_directories(11_constants
+    INTERFACE
+        "11_协程并发服务器/include"
+)
+
+# 消息节点
+add_library(11_msg_node
+    "11_协程并发服务器/src/msg_node.cc"
+)
+target_include_directories(11_msg_node
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+target_link_libraries(11_msg_node
+    PUBLIC
+        11_constants
+        ${ASIO_COMMON_LIBS}
+)
+
+# io_context 线程池
+add_library(11_io_context_pool
+    "11_协程并发服务器/src/io_context_poll.cc"
+)
+target_include_directories(11_io_context_pool
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+target_link_libraries(11_io_context_pool
+    PUBLIC
+        11_singleton
+        ${ASIO_COMMON_LIBS}
+)
+
+# 逻辑消息节点
+add_library(11_logic_node
+    "11_协程并发服务器/src/logic_node.cc"
+)
+target_include_directories(11_logic_node
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+target_link_libraries(11_logic_node
+    PUBLIC
+        11_msg_node
+)
+
+# 逻辑处理系统
+add_library(11_logic_system
+    "11_协程并发服务器/src/logic_system.cc"
+)
+target_include_directories(11_logic_system
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+
+# 客户端会话
+add_library(11_session
+    "11_协程并发服务器/src/session.cc"
+)
+target_include_directories(11_session
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+
+# TCP 服务器
+add_library(11_server
+    "11_协程并发服务器/src/server.cc"
+)
+target_include_directories(11_server
+    PUBLIC
+        "11_协程并发服务器/include"
+)
+
+# logic_system 与 session 会互相调用，所以两个目标都声明对方。
+# CMake 会在最终链接静态库时处理这个循环依赖。
+target_link_libraries(11_logic_system
+    PUBLIC
+        11_logic_node
+        11_session
+        11_singleton
+        JsonCpp::JsonCpp
+        ${ASIO_COMMON_LIBS}
+)
+target_link_libraries(11_session
+    PUBLIC
+        11_msg_node
+        11_logic_system
+        11_constants
+        ${ASIO_COMMON_LIBS}
+)
+target_link_libraries(11_server
+    PUBLIC
+        11_session
+        11_io_context_pool
+        ${ASIO_COMMON_LIBS}
+)
+
+# 协程 echo 服务器示例
 add_executable(11_coroutine_server_demo
     "11_协程并发服务器/demo/coroutine_server_demo.cc"
 )
 target_link_libraries(11_coroutine_server_demo
-PUBLIC
-    ${ASIO_COMMON_LIBS}
+    PRIVATE
+        ${ASIO_COMMON_LIBS}
 )
 
+# TCP 客户端示例
 add_executable(11_client_demo
     "11_协程并发服务器/demo/client_demo.cc"
 )
 target_link_libraries(11_client_demo
+    PRIVATE
+        ${ASIO_COMMON_LIBS}
+)
+
+add_executable(11_async_server
+    "11_协程并发服务器/src/async_server.cc"
+)
+target_link_libraries(11_async_server
 PUBLIC
     ${ASIO_COMMON_LIBS}
+    11_server
+)
+
+add_executable(11_client_test
+    "11_协程并发服务器/src/client.cc"
+)
+target_link_libraries(11_client_test
+PUBLIC
+    ${ASIO_COMMON_LIBS}
+    JsonCpp::JsonCpp
 )
